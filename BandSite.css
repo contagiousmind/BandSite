@@ -1,1 +1,25 @@
-styles
+/* .main {
+    float:left;
+    width:90%;
+    height: 50%;
+    padding:10px;     
+} 
+*/
+
+:root {
+    --blue: #00c3e3;
+    --pink: #ff4554; 
+    --grey: #989898;
+    --dark: #414548;
+    --red: #e60012;
+
+    --bluehalf:#00c3e350;
+
+    --greyhalf:#98989850;
+    --darkhalf:#41454850;
+    --redhalf:#e6001250;
+
+}
+
+
+

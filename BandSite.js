@@ -1,1 +1,8 @@
-the stuffs
+// JavaScript source code
+$(function () {
+
+
+    
+});
+
+
