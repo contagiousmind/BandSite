@@ -1,25 +1,93 @@
-/* .main {
-    float:left;
-    width:90%;
-    height: 50%;
-    padding:10px;     
-} 
-*/
-
 :root {
-    --blue: #00c3e3;
-    --pink: #ff4554; 
-    --grey: #989898;
-    --dark: #414548;
-    --red: #e60012;
+    --background: #373737;
+    --textcolor: #fff;
 
-    --bluehalf:#00c3e350;
-
-    --greyhalf:#98989850;
-    --darkhalf:#41454850;
-    --redhalf:#e6001250;
+    --accentcolor1: #fff;
+    --accentcolor2: red;
+    
 
 }
+
+
+body {
+    background-color: var(--background);
+    color: var(--textcolor);
+    margin: 0 auto;
+}
+
+
+
+
+.mainmenu {
+    float: left;
+    width: 100%;
+    border-bottom: 2px solid var(--accentcolor1);
+}
+
+.mainmenu .mainmenuouter {
+    float:left;
+    width: 60%;
+    margin-left:20%;
+}
+
+.mainmenu .mainmenuouter .menulogoouter {
+    float:left;
+    margin-right: 10%;
+}
+
+.mainmenu .mainmenuouter .menuitems {
+    float:right;
+    width: 80%;
+}
+
+.mainmenu .mainmenuouter .menuitems .menuitemouter {
+    float:right;
+    width: 10%;
+    padding: 15px 0;
+    height: 20px;
+    cursor: pointer;
+    border-bottom: 2px solid var(--background);
+}
+
+.mainmenu .mainmenuouter .menuitems .menuitemouter:hover,
+.mainmenu .mainmenuouter .menuitems .menuitemouter.selected {
+    background-color: var(--textcolor);
+    color: var(--background);
+    border-color: var(--accentcolor2);
+}
+
+.mainmenu .mainmenuouter .menuitems .menuitemouter .menuitem {
+    text-align:center;
+}
+
+
+
+
+.maincontent {
+    float:left;
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 100px;
+    display:none;
+}
+
+.maincontent .maincontenttitle {
+    float:left;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    border-bottom: 2px solid var(--accentcolor2);
+}
+
+.maincontent .tabcontent {
+    float:left;
+    width: 100%;
+
+}
+
+
+
+
 
 
 

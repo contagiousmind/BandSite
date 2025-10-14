@@ -1,13 +1,21 @@
 // JavaScript source code
 $(function () {
-    LoadMenu();
-
+    MenuItem_Click(1);
     
 });
 
 
-function LoadMenu() {
-    $( "#Menu" ).load( "Menu.html", function() {
-        alert( "Load was performed." );
-    });
+
+function MenuItem_Click(tab) {
+    $(".menuitemouter").removeClass("selected");
+    $("#MenuItemOuter_" + tab).addClass("selected");
+
+    $(".maincontent").hide();
+    $("#MainContent_" + tab).show();
+
 }
+
+
+
+
+
