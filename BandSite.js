@@ -13,6 +13,14 @@ function MenuItem_Click(tab) {
     $(".maincontent").hide();
     $("#MainContent_" + tab).show();
 
+
+    switch (tab) {
+        
+        case 5:
+            BuildGigsDisplay();
+            break;
+
+    }
 }
 
 
