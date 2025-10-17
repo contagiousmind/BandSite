@@ -71,7 +71,10 @@ faqList.push(new FAQ(
       'Where did the name come from?'
     , '...we\'re named after the three things we always keep in our back pocket. A Penny, a pen and whole lotta ass.'
 ));
-
+faqList.push(new FAQ(
+      'Where did the name come from?'
+    , 'we love coins and trees'
+));
 
 
 
