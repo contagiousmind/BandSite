@@ -10,6 +10,7 @@
         <script src="BandSite.js" type="text/javascript"></script>
 
         <script src="Gigs.js" type="text/javascript"></script>
+        <script src="Home.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -61,6 +62,65 @@
         <div id="MainContent_1" class="maincontent">
             <div id="MainContentTitle_1" class="maincontenttitle">
                 <span>The Penny Aspen Project</span>
+            </div>
+
+            <div id="TabContent_1" class="tabcontent">
+                <div class="homeimageouter">
+                    <img src="Images/HomeLogo.jpg" width="100%" />
+                </div>
+
+                <div id="AboutUs_MainOuter" class="aboutusmainouter">
+
+                </div>
+
+                <div id="BandMembers_MainOuter" class="bandmembersmainouter">
+                    
+                </div>
+
+                <div id="FAQ_MainOuter" class="faqmainouter">
+                    <div class="faqtitle">
+                        <span>Where did that name come from?</span>
+                    </div>
+                    <div id="FAQ_Answers_MainOuter">
+
+                    </div>
+                </div>
+            </div>
+        
+
+
+            <div id="AboutUs_Template" style="display:none;">
+                <div class="aboutusouter">
+                    <div class="aboutuspicture">
+                        <img src="$ABOUTUSPICTURE$" height="400" />
+                    </div>
+                    <div class="aboutusblurb">
+                        <span>$ABOUTUSBLURB$</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="FAQ_Template"style="display:none;">
+                <div class="faqouter">
+                    <span>&quot;$ANSWER$&quot;</span>
+                </div>
+            </div>
+
+            <div id="BandMember_Template" style="display:none;">
+                <div class="memberouter">
+                    <div class="memberpicture">
+                        <img src="$MEMBERPICTURE$" height="300" />
+                    </div>
+                    <div class="membername">
+                        <span>$MEMBERNAME$</span>
+                    </div>
+                    <div class="memberplays">
+                        <span>$MEMBERPLAYS$</span>
+                    </div>
+                    <div class="memberblurb" style="display:none;">
+                        <span>$MEMBERBLURB$</span>
+                    </div>
+                </div>
             </div>
         </div>
 
