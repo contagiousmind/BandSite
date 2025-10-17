@@ -63,7 +63,14 @@ faqList.push(new FAQ(
       'Where did the name come from?'
     , 'Penny Aspen was the original bassist of The Melvins.'
 ));
-
+faqList.push(new FAQ(
+      'Where did the name come from?'
+    , 'Penny Aspen was the name of our first bass player'
+));
+faqList.push(new FAQ(
+      'Where did the name come from?'
+    , '...we\'re named after the three things we always keep in our back pocket. A Penny, a pen and whole lotta ass.'
+));
 
 
 
