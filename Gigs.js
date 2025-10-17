@@ -121,21 +121,6 @@ gigList.push(new Gig(
     , ''
  ));
 
- gigList.push(new Gig(
-      new Date('2025-08-23')
-    , 'Hunstanton Battle of the Bands 2025'
-    , 'Grand final'
-    , 'The Green'
-    , 'Hunstanton'
-    , 'UK'
-    , new Array(['', '', '', ''])
-    , ''
-    , '12:00'
-    , '14:00'
-    , ''
-    , ''
- ));
-
 gigList.push(new Gig(
       new Date('2025-08-23')
     , 'Hunstanton Battle of the Bands 2025'
@@ -147,8 +132,8 @@ gigList.push(new Gig(
     , ''
     , '12:00'
     , '14:00'
-    , ''
-    , ''
+    , 'Images/20250823_PromoPoster.jpeg'
+    , 'Images/20250823_GigPicture.jpeg'
  ));
 
 gigList.push(new Gig(
@@ -162,8 +147,8 @@ gigList.push(new Gig(
     , ''
     , '19:00'
     , '19:30'
-    , ''
-    , ''
+    , 'Images/20250829_PromoPoster.jpeg'
+    , 'Images/20250829_GigPicture.jpeg'
  ));
 
 gigList.push(new Gig(
@@ -235,7 +220,7 @@ function BuildGigsDisplay() {
     for (i = 0; i < gigList.length; i++) {
         
         html += itemTemplate.replace(/\$PROMOPOSTER\$/g, gigList[i].PromoPoster)
-                            .replace(/\$DATE\$/g, gigList[i].Date.toLocaleDateString('en-gb', dateOptions))
+                            .replace(/\$DATE\$/g, gigList[i].Date.toLocaleDateString('en-GB', dateOptions))
                             .replace(/\$EVENT\$/g, gigList[i].Event)
                             .replace(/\$VENUE\$/g, gigList[i].Venue)
                             .replace(/\$CITY\$/g, gigList[i].City)
