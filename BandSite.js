@@ -15,7 +15,13 @@ function MenuItem_Click(tab) {
 
 
     switch (tab) {
-        
+
+        case 1:
+            BuildAboutUs();
+            BuildFAQs();
+            BuildMembers();
+
+            break;
         case 5:
             BuildGigsDisplay();
             break;
