@@ -5,7 +5,7 @@
 var aboutUs = new AboutUs(
       'The Penny Aspen Project'
     , 'Images/ThePennyAspenProjectHIGHRES5_websize.jpg'
-    , '<b>\'The Penny Aspen Project\'</b> are a grunge influenced, alternative rock band from Cambridgeshire, UK. Birthed in 2025 from one of the few positive things to ceom out of 2020, where her art was written.'
+    , '<b>\'The Penny Aspen Project\'</b> are a grunge influenced, alternative rock band from Cambridgeshire, UK. Birthed in 2025 from one of the few positive things to come out of 2020, where her art was written.'
 );
 
 
