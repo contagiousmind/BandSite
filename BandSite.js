@@ -96,7 +96,7 @@ function MenuItem_Click(tab) {
     switch (tab) {
 
         case 1:
-            window.location.href = host;
+            window.location = host;
             BuildAboutUs();
             BuildFAQs();
             BuildMembers();
@@ -106,30 +106,30 @@ function MenuItem_Click(tab) {
             break;
 
         case 2:
-            window.location.href = host + '/News';
+            window.location = host + '/News';
             break;
 
         case 3:         // videos
-            window.location.href = host + '/Videos';
+            window.location = host + '/Videos';
             BuildVideos();
 
             break;
 
         case 4:
-            window.location.href = host + '/Music';
+            window.location = host + '/Music';
             break;
 
         case 5:
-            window.location.href = host + '/Gigs';
+            window.location = host + '/Gigs';
             BuildGigsDisplay();
             break;
 
         case 6:
-            window.location.href = host + '/Lyrics';
+            window.location = host + '/Lyrics';
             break;
 
         case 7:
-            window.location.href = host + '/Photos';
+            window.location = host + '/Photos';
             break;
 
     }
