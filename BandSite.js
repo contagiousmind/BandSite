@@ -62,15 +62,19 @@ function MenuItem_Click(tab) {
             BuildInsta();
 
             break;
+
+        case 3:
+            BuildVideos();
+
+            break;
+
+            
         case 5:
             BuildGigsDisplay();
             break;
 
 
-        case 7:
-            // BuildVideos();
 
-            break;
 
     }
 }
