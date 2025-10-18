@@ -1,7 +1,45 @@
 // JavaScript source code
 $(function () {
-    MenuItem_Click(1);
-    
+
+    // check url for tab to run...
+    var endOfUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+    if (endOfUrl.toLowerCase() == "index.html") {
+        // carry on...
+        MenuItem_Click(1);
+
+    } else {
+        urlSet = true;
+
+        switch (endOfUrl.toLowerCase()) {
+            case "news":
+                MenuItem_Click(2);
+                break;
+
+            case "videos":
+                MenuItem_Click(3);
+                break;
+
+            case "music":
+                MenuItem_Click(4);
+                break;
+
+            case "gigs":
+                MenuItem_Click(5);
+                break;
+
+            case "lyrics":
+                MenuItem_Click(6);
+                break;
+
+            case "photos":
+                MenuItem_Click(7);
+                break;
+
+            default:
+                MenuItem_Click(1);
+                break;
+        }
+    }
 });
 
 var lastSrollY = 0;
@@ -52,29 +90,47 @@ function MenuItem_Click(tab) {
     $(".maincontent").hide();
     $("#MainContent_" + tab).show();
 
+    // set url?
+    var host = window.location.host;
 
     switch (tab) {
 
         case 1:
+            window.location.href = host;
             BuildAboutUs();
             BuildFAQs();
             BuildMembers();
             BuildInsta();
 
+
             break;
 
-        case 3:
+        case 2:
+            window.location.href = host + '/News';
+            break;
+
+        case 3:         // videos
+            window.location.href = host + '/Videos';
             BuildVideos();
 
             break;
 
-            
+        case 4:
+            window.location.href = host + '/Music';
+            break;
+
         case 5:
+            window.location.href = host + '/Gigs';
             BuildGigsDisplay();
             break;
 
+        case 6:
+            window.location.href = host + '/Lyrics';
+            break;
 
-
+        case 7:
+            window.location.href = host + '/Photos';
+            break;
 
     }
 }
