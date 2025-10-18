@@ -64,12 +64,12 @@ a {
 }
 
 .mainmenu .mainmenuouter .menuitems .menuitemouter:hover {
-    background-color: var(--textcolor);
+    background-color: var(--accentcolor3);
     color: var(--background);
     border-color: var(--accentcolor3);
 }
 .mainmenu .mainmenuouter .menuitems .menuitemouter.selected {
-    background-color: var(--textcolor);
+    background-color: var(--accentcolor4);
     color: var(--background);
     border-color: var(--accentcolor2);
 }
@@ -79,8 +79,6 @@ a {
     font-size: 3.5em;
     font-family: punk;
 }
-
-
 
 
 .maincontent {
