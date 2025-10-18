@@ -91,12 +91,11 @@ function MenuItem_Click(tab) {
     $("#MainContent_" + tab).show();
 
     // set url?
-    var host = window.location.protocol + '//' + window.location.host;
+    var urlToSet = window.location.protocol + '//' + window.location.host;
 
     switch (tab) {
 
         case 1:
-            window.location = host;
             BuildAboutUs();
             BuildFAQs();
             BuildMembers();
@@ -106,33 +105,37 @@ function MenuItem_Click(tab) {
             break;
 
         case 2:
-            window.location = host + '/News';
+            urlToSet + '/News';
             break;
 
         case 3:         // videos
-            window.location = host + '/Videos';
+            urlToSet + '/Videos';
             BuildVideos();
 
             break;
 
         case 4:
-            window.location = host + '/Music';
+            urlToSet + '/Music';
             break;
 
         case 5:
-            window.location = host + '/Gigs';
+            urlToSet + '/Gigs';
             BuildGigsDisplay();
             break;
 
         case 6:
-            window.location = host + '/Lyrics';
+            urlToSet + '/Lyrics';
             break;
 
         case 7:
-            window.location = host + '/Photos';
+            urlToSet + '/Photos';
             break;
-
     }
+
+    // change url
+    var obj = { Title: 'Penny Aspen', Url: urlToSet };
+    history.pushState(obj, obj.Title, obj.Url);
+    
 }
 
 
