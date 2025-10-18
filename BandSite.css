@@ -224,6 +224,11 @@ a {
     text-align: center;
 }
 
+.videoitemouter .videotitle .videosongname {
+    color:var(--accentcolor2);
+    font-weight: bold;
+}
+
 .videoitemouter .videoouter.wide {
     float:left;
     width: 1080px;
