@@ -36,9 +36,11 @@ body {
     margin-right: 10%;
 }
 
-.mainmenu .mainmenuouter .menulogoouter .menulogo {
-    height: 50px;
-}
+/* controlled in js now? 
+    .mainmenu .mainmenuouter .menulogoouter .menulogo {
+        height: 50px;
+    }
+*/
 
 .mainmenu .mainmenuouter .menuitems {
     float:right;
@@ -263,10 +265,12 @@ body {
         margin-right: 0;
     }
 
-    .mainmenu .mainmenuouter .menulogoouter .menulogo {
-        height: 100px;
-    }
-
+    /*
+        .mainmenu .mainmenuouter .menulogoouter .menulogo {
+            height: 100px;
+        }
+    */
+    
     .mainmenu .mainmenuouter .menuitems {
         float:right;
         width: 85%;
