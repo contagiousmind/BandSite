@@ -5,6 +5,7 @@ $(function () {
 
 });
 
+// this was fun to do, but useless!
 var lastSrollY = 0;
 var startingImageSize = 0;
 
@@ -27,10 +28,10 @@ window.onscroll = function (e) {
     }
 
     // new height...
-    var newHeight = currentImageHeight - (nowScrollY / 120);
+    var newHeight = currentImageHeight - (nowScrollY / 10);
     // if we're going up, add it back..
     if (downUp == 'up') {
-        newHeight = currentImageHeight + (nowScrollY / 120);
+        newHeight = currentImageHeight + (nowScrollY / 10);
     }
 
     // but we can't scroll up - as it's at the top of the page... so account for this...
@@ -38,7 +39,7 @@ window.onscroll = function (e) {
 
     if (newHeight > 50) { //  || newHeight <= startingImageSize) {
         // set height of image...
-        $("#MainLogo").height(newHeight);
+        // $("#MainLogo").height(newHeight);
 
         // $("body").css({"padding-top": toAdd});
 

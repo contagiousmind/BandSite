@@ -6,9 +6,13 @@
     --accentcolor2: red;
     --accentcolor3: #52adab;
     --accentcolor4: #81cfe3;
-
-
 }
+
+@font-face {
+    font-family: 'punk';
+    src: url('punkrockshow-font/PunkrockshowRegular-xP4m.ttf');
+}
+
 
 
 body {
@@ -49,19 +53,21 @@ a {
 
 .mainmenu .mainmenuouter .menuitems {
     float:right;
-    width: 80%;
+    width: 100%;
 }
 
 .mainmenu .mainmenuouter .menuitems .menuitemouter {
     float:right;
-    width: 10%;
-    padding: 15px 0;
-    height: 20px;
+    width: 14%;
     cursor: pointer;
-    border-bottom: 2px solid var(--background);
+    border-bottom: 5px solid var(--background);
 }
 
-.mainmenu .mainmenuouter .menuitems .menuitemouter:hover,
+.mainmenu .mainmenuouter .menuitems .menuitemouter:hover {
+    background-color: var(--textcolor);
+    color: var(--background);
+    border-color: var(--accentcolor3);
+}
 .mainmenu .mainmenuouter .menuitems .menuitemouter.selected {
     background-color: var(--textcolor);
     color: var(--background);
@@ -70,6 +76,8 @@ a {
 
 .mainmenu .mainmenuouter .menuitems .menuitemouter .menuitem {
     text-align:center;
+    font-size: 3.5em;
+    font-family: punk;
 }
 
 
@@ -87,11 +95,11 @@ a {
     float:left;
     width: 100%;
     text-align: center;
-    font-size: 2em;
+    font-size: 5em;
     padding-bottom: 5%;
     border-bottom: 2px solid var(--accentcolor2);
     margin-bottom: 5%;
-    
+    font-family: punk;
 }
 
 .maincontent .tabcontent {
@@ -147,7 +155,7 @@ a {
 }
 
 .aboutusouter .aboutuspicture img {
-    object-fit: cover;;
+    object-fit: cover;
     height: 100%;
     width: 100%;
     border-radius: 50px;
@@ -193,6 +201,31 @@ a {
     text-align:center;
 }
 
+.memberouter .memberpicture {
+    float:left;
+    width:100%;
+}
+.memberouter .memberpicture img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.memberouter .membername {
+    float:left;
+    width:100%;
+    padding: 2px 0;
+    text-align: center;
+    font-weight: bold;
+    color:var(--accentcolor3);
+}
+
+.memberouter .memberplays {
+    float:left;
+    width: 100%;
+    padding: 2px;
+    text-align: center;
+}
 
 .instatitle {
     float:left;
@@ -213,7 +246,7 @@ a {
 }
 
 .instaitemouter img {
-    object-fit: cover;;
+    object-fit: cover;
     height: 100%;
     width: 100%;
 }
