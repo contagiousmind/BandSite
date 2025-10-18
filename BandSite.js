@@ -35,7 +35,7 @@ window.onscroll = function (e) {
     // but we can't scroll up - as it's at the top of the page... so account for this...
     var toAdd = startingImageSize - newHeight;
 
-    if (newHeight > 50 && newHeight <= startingImageSize) {
+    if (newHeight > 50) { //  || newHeight <= startingImageSize) {
         // set height of image...
         $("#MainLogo").height(newHeight);
 
@@ -59,10 +59,17 @@ function MenuItem_Click(tab) {
             BuildAboutUs();
             BuildFAQs();
             BuildMembers();
+            BuildInsta();
 
             break;
         case 5:
             BuildGigsDisplay();
+            break;
+
+
+        case 7:
+            // BuildVideos();
+
             break;
 
     }

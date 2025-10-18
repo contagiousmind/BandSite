@@ -75,7 +75,10 @@ faqList.push(new FAQ(
       'Where did the name come from?'
     , 'Penny Aspen was the original bassist of The Melvins.'
 ));
-
+faqList.push(new FAQ(
+      'Where did the name come from?'
+    , 'Penny Aspen was Elvis\' 2nd wife.'
+));
 
 // would be best to query the profile and get latest x posts
 // but that looks way harder than it used to be...
@@ -181,6 +184,20 @@ function BuildMembers() {
 
     $("#BandMembers_MainOuter").html(html);
 
+}
+
+function BuildInsta() {
+    var template = $("#InstaItem_Template").html();
+    var html = "";
+
+    for(i = 0; i < instaList.length; i++) {
+        html += template.replace(/\$INSTAPICTURE\$/g, instaList[i].Src)
+                        .replace(/\$INSTALINK\$/g, instaList[i].Link)
+                ;
+    }
+
+
+    $("#InstaPictures_MainOuter").html(html);
 
 }
 
