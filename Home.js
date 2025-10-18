@@ -21,7 +21,7 @@ membersList.push(new BandMember(
       'Nard'
     , 'Images/BandMember_2.jpg'
     , 'The othe Founding member, and the other main writer.'
-    , 'Lead guitar and backing Vocals'
+    , 'Guitar and backing Vocals'
 ));
 
 membersList.push(new BandMember(
@@ -57,11 +57,7 @@ faqList.push(new FAQ(
 ));
 faqList.push(new FAQ(
       'Where did the name come from?'
-    , 'Penny Aspen was the inspiration of the of Alan Turin to break the code.'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'Penny Aspen was the original bassist of The Melvins.'
+    , 'Penny Aspen was the inspiration of Alan Turin to break the code.'
 ));
 faqList.push(new FAQ(
       'Where did the name come from?'
@@ -74,6 +70,10 @@ faqList.push(new FAQ(
 faqList.push(new FAQ(
       'Where did the name come from?'
     , 'we love coins and trees'
+));
+faqList.push(new FAQ(
+      'Where did the name come from?'
+    , 'Penny Aspen was the original bassist of The Melvins.'
 ));
 
 

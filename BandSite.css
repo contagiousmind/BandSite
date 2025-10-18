@@ -18,6 +18,7 @@ body {
 
 
 
+
 .mainmenu {
     float: left;
     width: 100%;
@@ -98,6 +99,7 @@ body {
     width: 100%;
     margin-bottom: 5%;
 }
+
 .bandmembersmainouter {
     float:left;
     width: 100%;
@@ -113,7 +115,7 @@ body {
 
 .aboutusouter {
     float:left;
-    width: 80%;
+    width: 100%;
 }
 
 .aboutusouter .aboutuspicture {
@@ -138,12 +140,18 @@ body {
     font-size:4em;
 }
 
+.faqanswersmainouter {
+    float:left;
+    padding-left:10%;
+}
+
 .faqouter {
     float:left;
-    width: 25%;
+    width: 10em;
     margin: 2%;
     text-align:center;
     font-size:1.5em;
+    font-style:italic;
 }
 
 
@@ -219,5 +227,30 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .maincontent {
+        float:left;
+        width: 95%;
+        margin-left:2.5%;
+        padding-top: 100px;
+        display:none;
+    }
+}
 
 
