@@ -4,6 +4,8 @@
 
     --accentcolor1: #fff;
     --accentcolor2: red;
+    --accentcolor3: #52adab;
+    --accentcolor4: #81cfe3;
 
 
 }
@@ -225,7 +227,7 @@ a {
 }
 
 .videoitemouter .videotitle .videosongname {
-    color:var(--accentcolor2);
+    color:var(--accentcolor3);
     font-weight: bold;
 }
 
