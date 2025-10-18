@@ -91,7 +91,9 @@ function MenuItem_Click(tab) {
     $("#MainContent_" + tab).show();
 
     // set url?
-    var urlToSet = window.location.protocol + '//' + window.location.host + '/BandSite';
+    var siteUrl = window.location.protocol + '//' + window.location.host + '/BandSite';
+
+    var pageName = "";
 
     switch (tab) {
 
@@ -105,35 +107,35 @@ function MenuItem_Click(tab) {
             break;
 
         case 2:
-            urlToSet += '/News';
+            pageName = 'News';
             break;
 
         case 3:         // videos
-            urlToSet += '/Videos';
+            pageName = 'Videos';
             BuildVideos();
 
             break;
 
         case 4:
-            urlToSet += '/Music';
+            pageName = 'Music';
             break;
 
         case 5:
-            urlToSet += '/Gigs';
+            pageName = 'Gigs';
             BuildGigsDisplay();
             break;
 
         case 6:
-            urlToSet += '/Lyrics';
+            pageName = 'Lyrics';
             break;
 
         case 7:
-            urlToSet += '/Photos';
+            pageName = 'Photos';
             break;
     }
 
     // change url
-    var obj = { Title: 'Penny Aspen', Url: urlToSet };
+    var obj = { Title: pageName, Url: siteUrl + '/' + pageName };
     history.pushState(obj, obj.Title, obj.Url);
 
 }
