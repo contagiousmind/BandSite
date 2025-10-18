@@ -91,7 +91,7 @@ function MenuItem_Click(tab) {
     $("#MainContent_" + tab).show();
 
     // set url?
-    var urlToSet = window.location.protocol + '//' + window.location.host;
+    var urlToSet = window.location.protocol + '//' + window.location.host + '/BandSite';
 
     switch (tab) {
 
