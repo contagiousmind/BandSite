@@ -105,37 +105,37 @@ function MenuItem_Click(tab) {
             break;
 
         case 2:
-            urlToSet + '/News';
+            urlToSet += '/News';
             break;
 
         case 3:         // videos
-            urlToSet + '/Videos';
+            urlToSet += '/Videos';
             BuildVideos();
 
             break;
 
         case 4:
-            urlToSet + '/Music';
+            urlToSet += '/Music';
             break;
 
         case 5:
-            urlToSet + '/Gigs';
+            urlToSet += '/Gigs';
             BuildGigsDisplay();
             break;
 
         case 6:
-            urlToSet + '/Lyrics';
+            urlToSet += '/Lyrics';
             break;
 
         case 7:
-            urlToSet + '/Photos';
+            urlToSet += '/Photos';
             break;
     }
 
     // change url
     var obj = { Title: 'Penny Aspen', Url: urlToSet };
     history.pushState(obj, obj.Title, obj.Url);
-    
+
 }
 
 
