@@ -83,7 +83,10 @@ body {
     width: 100%;
     text-align: center;
     font-size: 2em;
+    padding-bottom: 5%;
     border-bottom: 2px solid var(--accentcolor2);
+    margin-bottom: 5%;
+    
 }
 
 .maincontent .tabcontent {
@@ -270,7 +273,7 @@ body {
             height: 100px;
         }
     */
-    
+
     .mainmenu .mainmenuouter .menuitems {
         float:right;
         width: 85%;
