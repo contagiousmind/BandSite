@@ -36,6 +36,10 @@ body {
     margin-right: 10%;
 }
 
+.mainmenu .mainmenuouter .menulogoouter .menulogo {
+    height: 50px;
+}
+
 .mainmenu .mainmenuouter .menuitems {
     float:right;
     width: 80%;
@@ -97,7 +101,9 @@ body {
 .faqmainouter {
     float:left;
     width: 100%;
+    margin-top:10%;
     margin-bottom: 5%;
+
 }
 
 .bandmembersmainouter {
@@ -240,10 +246,45 @@ body {
 
 
 
-
+/*---- Mobile view changes ---- */
 
 
 @media only screen and (max-width: 1000px) {
+
+    /* menu sizes */
+    .mainmenu .mainmenuouter {
+        float:left;
+        width: 90%;
+        margin-left:5%;
+    }
+
+    .mainmenu .mainmenuouter .menulogoouter {
+        float:left;
+        margin-right: 0;
+    }
+
+    .mainmenu .mainmenuouter .menulogoouter .menulogo {
+        height: 100px;
+    }
+
+    .mainmenu .mainmenuouter .menuitems {
+        float:right;
+        width: 85%;
+        padding-top: 2%
+    }
+
+    .mainmenu .mainmenuouter .menuitems .menuitemouter {
+        float:right;
+        width: 12%;
+        padding: 15px 0;
+        height: 20px;
+        cursor: pointer;
+        border-bottom: 2px solid var(--background);
+        font-size:2em;
+    }
+
+
+    /*-- Tab content, remove margins --*/
     .maincontent {
         float:left;
         width: 95%;
@@ -251,6 +292,8 @@ body {
         padding-top: 100px;
         display:none;
     }
+
+
 }
 
 
