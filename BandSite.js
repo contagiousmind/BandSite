@@ -1,45 +1,8 @@
 // JavaScript source code
 $(function () {
 
-    // check url for tab to run...
-    var endOfUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-    if (endOfUrl.toLowerCase() == "index.html") {
-        // carry on...
-        MenuItem_Click(1);
+    MenuItem_Click(1);
 
-    } else {
-        urlSet = true;
-
-        switch (endOfUrl.toLowerCase()) {
-            case "news":
-                MenuItem_Click(2);
-                break;
-
-            case "videos":
-                MenuItem_Click(3);
-                break;
-
-            case "music":
-                MenuItem_Click(4);
-                break;
-
-            case "gigs":
-                MenuItem_Click(5);
-                break;
-
-            case "lyrics":
-                MenuItem_Click(6);
-                break;
-
-            case "photos":
-                MenuItem_Click(7);
-                break;
-
-            default:
-                MenuItem_Click(1);
-                break;
-        }
-    }
 });
 
 var lastSrollY = 0;
@@ -90,11 +53,6 @@ function MenuItem_Click(tab) {
     $(".maincontent").hide();
     $("#MainContent_" + tab).show();
 
-    // set url?
-    var siteUrl = window.location.protocol + '//' + window.location.host + '/BandSite';
-
-    var pageName = "";
-
     switch (tab) {
 
         case 1:
@@ -107,36 +65,27 @@ function MenuItem_Click(tab) {
             break;
 
         case 2:
-            pageName = 'News';
             break;
 
         case 3:         // videos
-            pageName = 'Videos';
             BuildVideos();
 
             break;
 
         case 4:
-            pageName = 'Music';
             break;
 
         case 5:
-            pageName = 'Gigs';
             BuildGigsDisplay();
             break;
 
         case 6:
-            pageName = 'Lyrics';
             break;
 
         case 7:
-            pageName = 'Photos';
             break;
     }
 
-    // change url
-    var obj = { Title: pageName, Url: siteUrl + '/' + pageName };
-    history.pushState(obj, obj.Title, obj.Url);
 
 }
 
