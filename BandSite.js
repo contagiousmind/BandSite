@@ -91,7 +91,7 @@ function MenuItem_Click(tab) {
     $("#MainContent_" + tab).show();
 
     // set url?
-    var host = window.location.host;
+    var host = window.location.protocol + '//' + window.location.host;
 
     switch (tab) {
 
