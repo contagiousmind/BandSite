@@ -77,7 +77,7 @@ a {
 .mainmenu .mainmenuouter .menuitems .menuitemouter .menuitem {
     text-align:center;
     font-size: 3.5em;
-    font-family: punk;
+    font-family: 'punk';
 }
 
 
@@ -97,7 +97,7 @@ a {
     padding-bottom: 5%;
     border-bottom: 2px solid var(--accentcolor2);
     margin-bottom: 5%;
-    font-family: punk;
+    font-family: 'punk';
 }
 
 .maincontent .tabcontent {
@@ -175,8 +175,8 @@ a {
     width:100%;
     text-align: center;
     font-size:4em;
-    font-family: punk;
-    
+    font-family: 'punk';
+
 }
 
 .faqanswersmainouter {
@@ -239,7 +239,7 @@ a {
     width:100%;
     text-align: center;
     font-size:4em;
-    font-family: punk;
+    font-family: 'punk';
 }
 
 .instapicturesmainouter {
@@ -411,7 +411,7 @@ a {
     .mainmenu .mainmenuouter .menuitems .menuitemouter .menuitem {
         text-align:center;
         font-size: 2em;
-        font-family: punk;
+        font-family: 'punk';
     }
 
 
