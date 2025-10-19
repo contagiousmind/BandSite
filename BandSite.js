@@ -63,6 +63,8 @@ function MenuItem_Click(tab) {
             BuildInsta();
 
 
+            GetData('https://docs.google.com/spreadsheets/d/e/2PACX-1vRB4E_6RnpLP1wWMjqcwsUvotNATB8Np3OntlXb7066ULcAHI9oqqRhucltFifPTYNd7DRNRE56oTdt/pub?output=csv&callback=googleDocCallback');
+
             break;
 
         case 2:
@@ -92,5 +94,34 @@ function MenuItem_Click(tab) {
 
 
 
+// found a way to ready from a google sheet?...
+// https://github.com/jsoma/tabletop?tab=readme-ov-file
+// https://github.com/jsoma/tabletop/blob/master/examples/simple/no-tabletop.html
+// cors issues of course...
+
+// https://github.com/mholt/PapaParse/issues/809
+// to help cors errors? nope
+/*
+window.googleDocCallback = function () { 
+    return true; 
+};
 
 
+
+function GetData(url) {
+        Papa.parse(url, {
+          download: true,
+          header: true,
+          complete: GetData_Complete
+        })
+}
+
+function GetData_Complete() {
+    var data = results.data;
+
+    alert("Successfully processed " + data.length + " rows!")
+
+
+}
+
+*/
