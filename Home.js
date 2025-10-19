@@ -201,16 +201,73 @@ function BuildMembers() {
 
     var html = '';
 
+     // set the size of these based on screen size... or actually just the div we're using
+     var screenWidth = $("#BandMembers_MainOuter").width(); //  window.innerWidth;
+     // and get width for each member
+     var width = screenWidth / membersList.length;
+     // and remove a few to fit it all in
+     width = width-15;
+     // and set the height so the width is 75% of height
+     var height = width / 0.75;
+
     for(i = 0; i < membersList.length; i++) {
-        html += template.replace(/\$MEMBERPICTURE\$/g, membersList[i].Picture)
-                        .replace(/\$MEMBERNAME\$/g, membersList[i].Name)
-                        .replace(/\$MEMBERPLAYS\$/g, membersList[i].Plays)
-                        .replace(/\$MEMBERBLURB\$/g, membersList[i].Blurb)
-                ;
+
+      // there are two picturesfor each member, profile, and wide...
+      var picList = new Array();
+      picList.push('Images/BandMember_' + (i+1) + 'p.jpg');
+      picList.push('Images/BandMember_' + (i+1) + 'w.jpg');
+      // randomise it?
+      var oneOrZero = (Math.random()>=0.5)? 1 : 0;
+
+
+      html += template.replace(/\$MEMBERNAME\$/g, membersList[i].Name)
+                      .replace(/\$MEMBERPLAYS\$/g, membersList[i].Plays)
+                      .replace(/\$MEMBERBLURB\$/g, membersList[i].Blurb)
+                      .replace(/\$HEIGHT\$/g, height)
+                      .replace(/\$WIDTH\$/g, width)
+                      //.replace(/\$MEMBERPICTURE\$/g, membersList[i].Picture)
+                      .replace(/\$MEMBERPICTURE\$/g, picList[oneOrZero])
+                      
+              ;
     }
 
     $("#BandMembers_MainOuter").html(html);
 
+}
+
+// and on click on member, enlarge?
+function MemberPicture_Click(e) {
+    // 'simply' remove our sizes, but store in data to put back
+    
+
+    if ($(e).data('large') == 'yes') {
+        // put them back...
+        $(e).width($(e).data('width')).height($(e).data('height'));
+        $(e).find(".memberpicture").width($(e).data('width')).height($(e).data('height'));
+        
+        // reset tags
+        $(e).data('large', 'no');
+        $(e).removeClass('large');
+
+    } else {
+
+        // when making them big, make sure this is the only one that is big...
+
+
+        $(e).data('width', $(e).width());
+        $(e).data('height', $(e).height());
+        $(e).data('large', 'yes');
+
+        $(e).width("").height("");
+        $(e).find(".memberpicture").width("").height("");
+        
+        $(e).addClass('large');
+    }
+
+      // scroll to
+    $('html, body').animate({
+      scrollTop: $(e).offset().top - 20 
+  }, 'slow');
 }
 
 function BuildInsta() {
