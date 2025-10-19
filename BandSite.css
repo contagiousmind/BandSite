@@ -169,6 +169,12 @@ a {
     width:60%;
 }
 
+.aboutusouter .aboutusblurb .aboutusbandname {
+    font-family: punk;
+    color:var(--accentcolor4);
+    font-weight: bold;
+}
+
 
 .faqtitle {
     float:left;
@@ -200,6 +206,8 @@ a {
     margin-right:10px;
     text-align:center;
     transition: ease-in-out all 0.5s;;
+    font-size:2em;
+
 }
 
 .memberouter.large {
@@ -369,72 +377,5 @@ a {
 
 
 
-
-/*---- Mobile view changes ---- */
-
-
-@media only screen and (max-width: 1000px) {
-
-    /* menu sizes */
-    .mainmenu .mainmenuouter {
-        float:left;
-        width: 90%;
-        margin-left:5%;
-    }
-
-    .mainmenu .mainmenuouter .menulogoouter {
-        float:left;
-        margin-right: 0;
-        width:100%;
-    }
-
-    .mainmenu .mainmenuouter .menulogoouter .menulogo {
-        width:100%;
-    }
-
-
-    .mainmenu .mainmenuouter .menuitems {
-        float:right;
-        width: 100%;
-        padding-top: 2%
-    }
-
-    .mainmenu .mainmenuouter .menuitems .menuitemouter {
-        float:right;
-        width: 14%;
-        padding: 15px 0;
-        cursor: pointer;
-        border-bottom: 2px solid var(--background);
-        font-size:1.5em;
-    }
-
-    .mainmenu .mainmenuouter .menuitems .menuitemouter .menuitem {
-        text-align:center;
-        font-size: 2em;
-        font-family: 'punk';
-    }
-
-
-    /*-- Tab content, remove margins --*/
-    .maincontent {
-        float:left;
-        width: 95%;
-        margin-left:2.5%;
-        padding-top: 100px;
-        display:none;
-    }
-
-    .faqanswersmainouter {
-        float:left;
-        padding-left:5%;
-    }
-
-    .videoitemouter {
-        float:left;
-        width: 90%;
-        margin: 1%;
-    }
-
-}
 
 

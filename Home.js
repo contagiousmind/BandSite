@@ -5,7 +5,7 @@
 var aboutUs = new AboutUs(
       'The Penny Aspen Project'
     , 'Images/ThePennyAspenProjectHIGHRES5_websize.jpg'
-    , '<b>\'The Penny Aspen Project\'</b> are a grunge influenced, alternative rock band from Cambridgeshire, UK. Birthed in 2025 from one of the few positive things to come out of 2020, where her art was written.'
+    , ' are a grunge influenced, alternative rock band from Cambridgeshire, UK. Birthed in 2025 from one of the few positive things to come out of 2020, where her art was written.'
 );
 
 
@@ -14,35 +14,35 @@ membersList.push(new BandMember(
       'Benny Boy'
     , 'Images/BandMember_1.jpg'
     , 'Founding member, and one of the main writers of most of the music, but still in denial about the mid-life-crisis.'
-    , 'Main Vocals'
+    , 'Vocals + Dance'
 ));
 
 membersList.push(new BandMember(
       'Nard'
     , 'Images/BandMember_2.jpg'
     , 'The othe Founding member, and the other main writer.'
-    , 'Guitar and backing Vocals'
+    , 'Guitar + Vocals'
 ));
 
 membersList.push(new BandMember(
       'Ed'
     , 'Images/BandMember_3.jpg'
     , 'The strongest drummer in town!'
-    , 'Drums (+eggs)'
+    , 'Drums + eggs'
 ));
 
 membersList.push(new BandMember(
       'Chris'
     , 'Images/BandMember_4.jpg'
     , ''
-    , 'Bass'
+    , 'Bass + bass face'
 ));
 
 membersList.push(new BandMember(
       'Seb'
     , 'Images/BandMember_5.jpg'
     , ''
-    , 'Guitar'
+    , 'Guitar + Vocals'
 ));
 
 
@@ -176,6 +176,7 @@ function BuildAboutUs() {
     var template = $("#AboutUs_Template").html();
 
     var html = template.replace(/\$ABOUTUSPICTURE\$/g, aboutUs.AboutUsPicture)
+                        .replace(/\$BANDNAME\$/g, aboutUs.BandName.toLowerCase())
                         .replace(/\$ABOUTUSBLURB\$/g, aboutUs.Blurb)
                     ;
 
