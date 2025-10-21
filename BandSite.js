@@ -1,16 +1,27 @@
 // JavaScript source code
+
+
 $(function () {
 
-    MenuItem_Click(1);
+    MenuItem_Click('Home');
     
     GetThemeColors();
 
+    ReadQueryParam()
+
 });
 
+function ReadQueryParam() {
+
+    var query = window.location.search;
+    if (query != "") {
+        MenuItem_Click(query.replace('?',''));
+    }
+}
+
+
 function GetThemeColors() {
-
     GetData('Theme', function(data) {
-
         if (data.values.length > 0) {
             var r = document.querySelector(':root');
             var rs = getComputedStyle(r);
@@ -19,14 +30,15 @@ function GetThemeColors() {
                 // r.style.setProperty('--background', 'green');
 
                 r.style.setProperty('--'+data.values[i][0], data.values[i][1]);
-
             }
-
         }
     })
-
-
 }
+
+
+// keep track of what data has been loaded, so we don't double up by clicking around..
+var loadedTabs = new Array();
+
 
 
 // this was fun to do, but useless!
@@ -78,45 +90,53 @@ function MenuItem_Click(tab) {
     $(".maincontent").hide();
     $("#MainContent_" + tab).show();
 
-    switch (tab) {
+    switch (tab.toLowerCase()) {
 
-        case 1:
+        case 'home':
             // BuildAboutUs();
             // BuildFAQs();
             // BuildMembers();
             BuildInsta();
 
-
             GetData('Home_AboutUs', BuildAboutUs);
             GetData('Home_WhereDidThatNameComeFrom', BuildFAQs);
             GetData('Home_Members', BuildMembers);
 
-
             break;
 
-        case 2:     // news
+        case 'news':     // news
             break;
 
-        case 3:         // videos
+        case 'videos':         // videos
             GetData('Videos', BuildVideos);
 
             break;
 
-        case 4:     // music
+        case 'music':     // music
             GetData('Music', BuildMusic);
             break;
 
-        case 5:
+        case 'gigs':
             BuildGigsDisplay();
             break;
 
-        case 6:
+        case 'lyrics':
             break;
 
-        case 7:
+        case 'photos':
             break;
     }
 
+
+    // add it to url...
+    if (location.host != "") {
+        if (tab != 'Home') {
+            window.history.pushState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?' + tab);
+
+        } else {
+            window.history.pushState(aboutUs.BandName, 'Title', location.host + location.pathname);
+        }
+    }
 
 }
 
@@ -156,14 +176,23 @@ function GetData_Complete() {
 
 // try this?
 function GetData(sheetName, completeEvent) {
+
+    if (loadedTabs.includes(sheetName)) {
+        return;
+    }
+
         // photo's key - AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA
-    var apiKey = 'AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA'; // Replace with your API key
+    var aaa = 'AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA'; 
     var spreadsheetId = '17D3wVbnIUR5WS0LpTRUniBTU9rGuXmbWuq94i2GmRPQ'; // Replace with your spreadsheet ID
     // var sheetName = 'Sheet1'; // Replace with your sheet name
-    var url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+    var url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${aaa}`;
 
 
     Ajax(url, function(data) {
+
+        // keep track of what we've loaded.
+        loadedTabs.push(sheetName);
+
         completeEvent.call('', data);
         
 

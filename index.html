@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <Title>The Penny Aspen Project</Title>
+        <Title></Title>
         <meta charset="utf-8" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
@@ -26,37 +26,37 @@
                     <img src="Images/logo.jpg" id="MainLogo" class="menulogo" />   
                 </div>   
                 <div class="menuitems"> 
-                    <div id="MenuItemOuter_1" class="menuitemouter" onclick="MenuItem_Click(1);">  
+                    <div id="MenuItemOuter_Home" class="menuitemouter" onclick="MenuItem_Click('Home');">  
                         <div class="menuitem">  
                             <span>home</span> 
                         </div>  
                     </div>  
-                    <div id="MenuItemOuter_2" class="menuitemouter" onclick="MenuItem_Click(2);">   
+                    <div id="MenuItemOuter_News" class="menuitemouter" onclick="MenuItem_Click('News');">   
                         <div class="menuitem">  
                             <span>news</span> 
                         </div>  
                     </div>  
-                    <div id="MenuItemOuter_3" class="menuitemouter" onclick="MenuItem_Click(3);">   
+                    <div id="MenuItemOuter_Videos" class="menuitemouter" onclick="MenuItem_Click('Videos');">   
                         <div class="menuitem">  
                             <span>videos</span> 
                         </div>  
                     </div>  
-                    <div id="MenuItemOuter_4" class="menuitemouter" onclick="MenuItem_Click(4);">  
+                    <div id="MenuItemOuter_Music" class="menuitemouter" onclick="MenuItem_Click('Music');">  
                         <div class="menuitem">  
                             <span>music</span> 
                         </div>  
                     </div>  
-                    <div id="MenuItemOuter_5" class="menuitemouter" onclick="MenuItem_Click(5);">  
+                    <div id="MenuItemOuter_Gigs" class="menuitemouter" onclick="MenuItem_Click('Gigs');">  
                         <div class="menuitem">  
                             <span>gigs</span> 
                         </div>  
                     </div>  
-                    <div id="MenuItemOuter_6" class="menuitemouter" onclick="MenuItem_Click(6);"> 
+                    <div id="MenuItemOuter_Lyrics" class="menuitemouter" onclick="MenuItem_Click('Lyrics');"> 
                         <div class="menuitem">  
                             <span>lyrics</span> 
                         </div>  
                     </div>  
-                    <div id="MenuItemOuter_7" class="menuitemouter" onclick="MenuItem_Click(7);"> 
+                    <div id="MenuItemOuter_Photos" class="menuitemouter" onclick="MenuItem_Click('Photos');"> 
                         <div class="menuitem">  
                             <span>photos</span> 
                         </div>  
@@ -65,12 +65,12 @@
             </div> 
         </div>
 
-        <div id="MainContent_1" class="maincontent">
-            <div id="MainContentTitle_1" class="maincontenttitle">
-                <span>the penny aspen project</span>
+        <div id="MainContent_Home" class="maincontent">
+            <div id="MainContentTitle_Home" class="maincontenttitle">
+                <span id="HomeTabTitle"></span>
             </div>
 
-            <div id="TabContent_1" class="tabcontent">
+            <div id="TabContent_Home" class="tabcontent">
                 <div class="homeimageouter">
                     <img src="Images/homelogo.jpg" width="100%" />
                 </div>
@@ -94,9 +94,9 @@
 
                 <div id="Insta_MainOuter" class="instamainouter">
                     <div class="instatitle">
-                        <a href="https://www.instagram.com/pennyaspenproject/" target="_blank" >
+                        <a id="InstaLink" href="" target="_blank" >
                             <img src="Images/Instagram_Glyph_Gradient.png" width="50" />
-                            <span>/pennyaspenproject</span>
+                            <span id="InstaPage"></span>
                         </a>
                     </div>
                     <div id="InstaPictures_MainOuter" class="instapicturesmainouter">
@@ -165,9 +165,9 @@
 
         <div id="MainContent_3" class="maincontent">
             <div id="MainContentTitle_3" class="maincontenttitle">
-                <a href="https://www.youtube.com/@ThePennyAspenProject/" target="_blank" >
+                <a id="YouTubeLink" href="" target="_blank" >
                     <img src="Images/yt_logo.png" width="50" />
-                    <span>/@thepennyaspenproject</span>
+                    <span id="YouTubePagePage"></span>
                 </a>
             </div>
             

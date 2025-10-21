@@ -2,83 +2,10 @@
 
 // can manage the about us kinda stuff here?
 
-// var aboutUs = new AboutUs(
-//       'The Penny Aspen Project'
-//     , 'Images/ThePennyAspenProjectHIGHRES5_websize.jpg'
-//     , ' are a grunge influenced, alternative rock band from Cambridgeshire, UK. Birthed in 2025 from one of the few positive things to come out of 2020, where her art was written.'
-// );
-
-
 var membersList = new Array();
-// membersList.push(new BandMember(
-//       'Benny Boy'
-//     , 'Images/BandMember_1.jpg'
-//     , 'Founding member, and one of the main writers of most of the music, but still in denial about the mid-life-crisis.'
-//     , 'Vocals + Dance'
-// ));
-
-// membersList.push(new BandMember(
-//       'Nard'
-//     , 'Images/BandMember_2.jpg'
-//     , 'The othe Founding member, and the other main writer.'
-//     , 'Guitar + Vocals'
-// ));
-
-// membersList.push(new BandMember(
-//       'Ed'
-//     , 'Images/BandMember_3.jpg'
-//     , 'The strongest drummer in town!'
-//     , 'Drums + eggs'
-// ));
-
-// membersList.push(new BandMember(
-//       'Chris'
-//     , 'Images/BandMember_4.jpg'
-//     , ''
-//     , 'Bass + bass face'
-// ));
-
-// membersList.push(new BandMember(
-//       'Seb'
-//     , 'Images/BandMember_5.jpg'
-//     , ''
-//     , 'Guitar + Vocals'
-// ));
-
-
 var faqList = new Array();
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , 'Penny was the name of Nard\'s first cat.'
-// ));
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , 'Penny was the name of the first girl Ben loved, but couldn\'t have.'
-// ));
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , 'Penny Aspen was the inspiration of Alan Turin to break the code.'
-// ));
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , 'Penny Aspen was the name of our first bass player'
-// ));
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , '...we\'re named after the three things we always keep in our back pocket. A Penny, a pen and whole lotta ass.'
-// ));
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , 'we love coins and trees'
-// ));
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , 'Penny Aspen was the original bassist of The Melvins.'
-// ));
-// faqList.push(new FAQ(
-//       'Where did the name come from?'
-//     , 'Penny Aspen was Elvis\' 2nd wife.'
-// ));
+var aboutUs = new AboutUs('', '', '');
+
 
 // would be best to query the profile and get latest x posts
 // but that looks way harder than it used to be...
@@ -174,12 +101,26 @@ instaList.push(new InstaPic(
 
 function BuildAboutUs(data) {
 
-    var aboutUs = new AboutUs(
+    aboutUs = new AboutUs(
         data.values[1][0]
       , data.values[1][1]
       , data.values[1][2]
+      , data.values[1][3]
+      , data.values[1][4]
   );
 
+    // set page title
+    $(document).prop('title', aboutUs.BandName);
+    // and the title of the home page
+    $("#HomeTabTitle").html(aboutUs.BandName.toLowerCase());
+
+    // and the insta, and youtube bits...
+    $("#InstaPage").html('/' + aboutUs.InstaPage.toLowerCase());
+    $("#InstaLink").proper('href','https://www.instagram.com/' + aboutUs.InstaPage + '/');
+    
+
+    $("#YouTubePage").html('/@' + aboutUs.YouTubePage.toLowerCase());
+    $("#YouTubeLink").prop('href', 'https://www.youtube.com/@' + aboutUs.YouTubePage)
 
     var template = $("#AboutUs_Template").html();
 
@@ -189,6 +130,7 @@ function BuildAboutUs(data) {
                     ;
 
     $("#AboutUs_MainOuter").html(html);
+
 }
 
 function BuildFAQs(data) {
@@ -314,11 +256,12 @@ function BuildInsta() {
 
 
 //objects
-function AboutUs(bandName, aboutUsPicture, blurb) {
+function AboutUs(bandName, aboutUsPicture, blurb, instaPage, youTubePage) {
     this.BandName = bandName;
     this.AboutUsPicture= aboutUsPicture;
     this.Blurb = blurb;
-
+    this.InstaPage = (instaPage == null ? '' : instaPage);
+    this.YouTubePage = (youTubePage == null ? '' : youTubePage);
 }
 
 
