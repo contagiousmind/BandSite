@@ -2,9 +2,9 @@
 
 
 $(function () {
-
-    //         MenuItem_Click('Home');
-    ReadQueryParam();
+    
+    MenuItem_Click('Home');
+    // ReadQueryParam();
     
     GetThemeColors();
 
