@@ -10,7 +10,6 @@ $(function () {
 });
 
 function ReadQueryParam() {
-
     var query = window.location.search;
     if (query != "") {
         MenuItem_Click(query.replace('?',''));
