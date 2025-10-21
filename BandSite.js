@@ -3,27 +3,28 @@
 
 $(function () {
 
+    //         MenuItem_Click('Home');
     ReadQueryParam();
     
     GetThemeColors();
 
 });
 
-function ReadQueryParam() {
-    var query = window.location.search;
-    if (query != "") {
-        MenuItem_Click(query.replace('?',''));
-    } else {
-        MenuItem_Click('Home');
-    }
-}
+// function ReadQueryParam() {
+//     var query = window.location.search;
+//     if (query != "") {
+//         MenuItem_Click(query.replace('?',''));
+//     } else {
+//         MenuItem_Click('Home');
+//     }
+// }
 
 
 function GetThemeColors() {
     GetData('Theme', function(data) {
         if (data.values.length > 0) {
             var r = document.querySelector(':root');
-            var rs = getComputedStyle(r);
+            // var rs = getComputedStyle(r);
         
             for(i=1; i < data.values.length; i++) {
                 // r.style.setProperty('--background', 'green');
@@ -116,7 +117,7 @@ function MenuItem_Click(tab) {
             break;
 
         case 'gigs':
-            BuildGigsDisplay();
+            GetData('Gigs', BuildGigsDisplay);
             break;
 
         case 'lyrics':
@@ -127,15 +128,15 @@ function MenuItem_Click(tab) {
     }
 
 
-    // add it to url...
-    if (location.host != "") {
-        if (tab != 'Home') {
-            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?' + tab);
+    // // add it to url...
+    // if (location.host != "") {
+    //     if (tab != 'Home') {
+    //         window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?' + tab);
 
-        } else {
-            window.history.replaceState(aboutUs.BandName, 'Title', location.host + location.pathname);
-        }
-    }
+    //     } else {
+    //         window.history.replaceState(aboutUs.BandName, 'Title', location.host + location.pathname);
+    //     }
+    // }
 
 }
 
