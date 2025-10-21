@@ -57,25 +57,29 @@ function MenuItem_Click(tab) {
     switch (tab) {
 
         case 1:
-            BuildAboutUs();
-            BuildFAQs();
-            BuildMembers();
+            // BuildAboutUs();
+            // BuildFAQs();
+            // BuildMembers();
             BuildInsta();
 
 
-            GetData('https://docs.google.com/spreadsheets/d/e/2PACX-1vRB4E_6RnpLP1wWMjqcwsUvotNATB8Np3OntlXb7066ULcAHI9oqqRhucltFifPTYNd7DRNRE56oTdt/pub?output=csv&callback=googleDocCallback');
+            GetData('Home_AboutUs', BuildAboutUs);
+            GetData('Home_WhereDidThatNameComeFrom', BuildFAQs);
+            GetData('Home_Members', BuildMembers);
+
 
             break;
 
-        case 2:
+        case 2:     // news
             break;
 
         case 3:         // videos
-            BuildVideos();
+            GetData('Videos', BuildVideos);
 
             break;
 
-        case 4:
+        case 4:     // music
+            GetData('Music', BuildMusic);
             break;
 
         case 5:
@@ -125,3 +129,55 @@ function GetData_Complete() {
 }
 
 */
+
+// try this?
+function GetData(sheetName, completeEvent) {
+        // photo's key - AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA
+    var apiKey = 'AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA'; // Replace with your API key
+    var spreadsheetId = '17D3wVbnIUR5WS0LpTRUniBTU9rGuXmbWuq94i2GmRPQ'; // Replace with your spreadsheet ID
+    // var sheetName = 'Sheet1'; // Replace with your sheet name
+    var url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+
+
+    Ajax(url, function(data) {
+        completeEvent.call('', data);
+        
+
+    }, '');
+}
+
+// https://docs.google.com/spreadsheets/d/e/2PACX-1vRB4E_6RnpLP1wWMjqcwsUvotNATB8Np3OntlXb7066ULcAHI9oqqRhucltFifPTYNd7DRNRE56oTdt/pub?output=csv
+
+
+//https://github.com/orgs/community/discussions/108921
+function Ajax(url, completeEvent, args) {
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        success: function(data) {
+            completeEvent.call(this, data);
+        }
+    });
+
+
+    // fetch(url)
+    // .then(
+    //     response => response.json()
+    // )
+    // // .then(
+    // //     data => console.log(data.values)
+    // // )
+    // .catch(
+    //     error => console.error('Error:', error)
+    // );
+
+}
+
+
+
+function RandomNum(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+

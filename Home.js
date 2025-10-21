@@ -2,83 +2,83 @@
 
 // can manage the about us kinda stuff here?
 
-var aboutUs = new AboutUs(
-      'The Penny Aspen Project'
-    , 'Images/ThePennyAspenProjectHIGHRES5_websize.jpg'
-    , ' are a grunge influenced, alternative rock band from Cambridgeshire, UK. Birthed in 2025 from one of the few positive things to come out of 2020, where her art was written.'
-);
+// var aboutUs = new AboutUs(
+//       'The Penny Aspen Project'
+//     , 'Images/ThePennyAspenProjectHIGHRES5_websize.jpg'
+//     , ' are a grunge influenced, alternative rock band from Cambridgeshire, UK. Birthed in 2025 from one of the few positive things to come out of 2020, where her art was written.'
+// );
 
 
 var membersList = new Array();
-membersList.push(new BandMember(
-      'Benny Boy'
-    , 'Images/BandMember_1.jpg'
-    , 'Founding member, and one of the main writers of most of the music, but still in denial about the mid-life-crisis.'
-    , 'Vocals + Dance'
-));
+// membersList.push(new BandMember(
+//       'Benny Boy'
+//     , 'Images/BandMember_1.jpg'
+//     , 'Founding member, and one of the main writers of most of the music, but still in denial about the mid-life-crisis.'
+//     , 'Vocals + Dance'
+// ));
 
-membersList.push(new BandMember(
-      'Nard'
-    , 'Images/BandMember_2.jpg'
-    , 'The othe Founding member, and the other main writer.'
-    , 'Guitar + Vocals'
-));
+// membersList.push(new BandMember(
+//       'Nard'
+//     , 'Images/BandMember_2.jpg'
+//     , 'The othe Founding member, and the other main writer.'
+//     , 'Guitar + Vocals'
+// ));
 
-membersList.push(new BandMember(
-      'Ed'
-    , 'Images/BandMember_3.jpg'
-    , 'The strongest drummer in town!'
-    , 'Drums + eggs'
-));
+// membersList.push(new BandMember(
+//       'Ed'
+//     , 'Images/BandMember_3.jpg'
+//     , 'The strongest drummer in town!'
+//     , 'Drums + eggs'
+// ));
 
-membersList.push(new BandMember(
-      'Chris'
-    , 'Images/BandMember_4.jpg'
-    , ''
-    , 'Bass + bass face'
-));
+// membersList.push(new BandMember(
+//       'Chris'
+//     , 'Images/BandMember_4.jpg'
+//     , ''
+//     , 'Bass + bass face'
+// ));
 
-membersList.push(new BandMember(
-      'Seb'
-    , 'Images/BandMember_5.jpg'
-    , ''
-    , 'Guitar + Vocals'
-));
+// membersList.push(new BandMember(
+//       'Seb'
+//     , 'Images/BandMember_5.jpg'
+//     , ''
+//     , 'Guitar + Vocals'
+// ));
 
 
 var faqList = new Array();
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'Penny was the name of Nard\'s first cat.'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'Penny was the name of the first girl Ben loved, but couldn\'t have.'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'Penny Aspen was the inspiration of Alan Turin to break the code.'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'Penny Aspen was the name of our first bass player'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , '...we\'re named after the three things we always keep in our back pocket. A Penny, a pen and whole lotta ass.'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'we love coins and trees'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'Penny Aspen was the original bassist of The Melvins.'
-));
-faqList.push(new FAQ(
-      'Where did the name come from?'
-    , 'Penny Aspen was Elvis\' 2nd wife.'
-));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , 'Penny was the name of Nard\'s first cat.'
+// ));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , 'Penny was the name of the first girl Ben loved, but couldn\'t have.'
+// ));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , 'Penny Aspen was the inspiration of Alan Turin to break the code.'
+// ));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , 'Penny Aspen was the name of our first bass player'
+// ));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , '...we\'re named after the three things we always keep in our back pocket. A Penny, a pen and whole lotta ass.'
+// ));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , 'we love coins and trees'
+// ));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , 'Penny Aspen was the original bassist of The Melvins.'
+// ));
+// faqList.push(new FAQ(
+//       'Where did the name come from?'
+//     , 'Penny Aspen was Elvis\' 2nd wife.'
+// ));
 
 // would be best to query the profile and get latest x posts
 // but that looks way harder than it used to be...
@@ -172,7 +172,15 @@ instaList.push(new InstaPic(
 
 
 
-function BuildAboutUs() {
+function BuildAboutUs(data) {
+
+    var aboutUs = new AboutUs(
+        data.values[1][0]
+      , data.values[1][1]
+      , data.values[1][2]
+  );
+
+
     var template = $("#AboutUs_Template").html();
 
     var html = template.replace(/\$ABOUTUSPICTURE\$/g, aboutUs.AboutUsPicture)
@@ -183,7 +191,15 @@ function BuildAboutUs() {
     $("#AboutUs_MainOuter").html(html);
 }
 
-function BuildFAQs() {
+function BuildFAQs(data) {
+
+  for(i = 0; i < data.values.length; i++) {
+      faqList.push(new FAQ(
+              ''
+          , data.values[i][0]
+      ));
+  }
+
     var template = $("#FAQ_Template").html();
 
     var html = '';
@@ -197,7 +213,18 @@ function BuildFAQs() {
     $("#FAQ_Answers_MainOuter").html(html);
 }
 
-function BuildMembers() {
+function BuildMembers(data) {
+
+    // loop starting on 1, and there's a header row in 0
+    for(i = 1; i < data.values.length; i++) {
+        membersList.push(new BandMember(
+            data.values[i][0]
+          , data.values[i][1]
+          , data.values[i][2]
+          , data.values[i][3]
+        ));
+    }
+
     var template = $("#BandMember_Template").html();
 
     var html = '';
@@ -215,10 +242,9 @@ function BuildMembers() {
 
       // there are two picturesfor each member, profile, and wide...
       var picList = new Array();
-      picList.push('Images/BandMember_' + (i+1) + 'p.jpg');
-      picList.push('Images/BandMember_' + (i+1) + 'w.jpg');
+      picList = membersList[i].Picture.split(',\n');
       // randomise it?
-      var oneOrZero = (Math.random()>=0.5)? 1 : 0;
+      var randomNum = RandomNum(1, picList.length) - 1;
 
 
       html += template.replace(/\$MEMBERNAME\$/g, membersList[i].Name)
@@ -227,7 +253,7 @@ function BuildMembers() {
                       .replace(/\$HEIGHT\$/g, height)
                       .replace(/\$WIDTH\$/g, width)
                       //.replace(/\$MEMBERPICTURE\$/g, membersList[i].Picture)
-                      .replace(/\$MEMBERPICTURE\$/g, picList[oneOrZero])
+                      .replace(/\$MEMBERPICTURE\$/g, picList[randomNum])
                       
               ;
     }
