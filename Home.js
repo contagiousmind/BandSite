@@ -119,7 +119,7 @@ function BuildAboutUs(data) {
     $("#InstaLink").prop('href','https://www.instagram.com/' + aboutUs.InstaPage + '/');
     
 
-    $("#YouTubePage").html('/@' + aboutUs.YouTubePage.toLowerCase());
+    $("#YouTubePage").html(aboutUs.YouTubePage.toLowerCase());
     $("#YouTubeLink").prop('href', 'https://www.youtube.com/@' + aboutUs.YouTubePage)
 
     var template = $("#AboutUs_Template").html();
