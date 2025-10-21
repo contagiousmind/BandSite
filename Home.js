@@ -116,7 +116,7 @@ function BuildAboutUs(data) {
 
     // and the insta, and youtube bits...
     $("#InstaPage").html('/' + aboutUs.InstaPage.toLowerCase());
-    $("#InstaLink").proper('href','https://www.instagram.com/' + aboutUs.InstaPage + '/');
+    $("#InstaLink").prop('href','https://www.instagram.com/' + aboutUs.InstaPage + '/');
     
 
     $("#YouTubePage").html('/@' + aboutUs.YouTubePage.toLowerCase());

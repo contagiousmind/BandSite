@@ -131,10 +131,10 @@ function MenuItem_Click(tab) {
     // add it to url...
     if (location.host != "") {
         if (tab != 'Home') {
-            window.history.pushState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?' + tab);
+            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?' + tab);
 
         } else {
-            window.history.pushState(aboutUs.BandName, 'Title', location.host + location.pathname);
+            window.history.replaceState(aboutUs.BandName, 'Title', location.host + location.pathname);
         }
     }
 
