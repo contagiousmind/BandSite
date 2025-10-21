@@ -3,11 +3,9 @@
 
 $(function () {
 
-    MenuItem_Click('Home');
+    ReadQueryParam();
     
     GetThemeColors();
-
-    ReadQueryParam()
 
 });
 
@@ -16,6 +14,8 @@ function ReadQueryParam() {
     var query = window.location.search;
     if (query != "") {
         MenuItem_Click(query.replace('?',''));
+    } else {
+        MenuItem_Click('Home');
     }
 }
 
