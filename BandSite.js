@@ -2,8 +2,32 @@
 $(function () {
 
     MenuItem_Click(1);
+    
+    GetThemeColors();
 
 });
+
+function GetThemeColors() {
+
+    GetData('Theme', function(data) {
+
+        if (data.values.length > 0) {
+            var r = document.querySelector(':root');
+            var rs = getComputedStyle(r);
+        
+            for(i=1; i < data.values.length; i++) {
+                // r.style.setProperty('--background', 'green');
+
+                r.style.setProperty('--'+data.values[i][0], data.values[i][1]);
+
+            }
+
+        }
+    })
+
+
+}
+
 
 // this was fun to do, but useless!
 var lastSrollY = 0;

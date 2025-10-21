@@ -1,5 +1,6 @@
 :root {
-    --background: #373737;
+    /*--Default colors, set in theme tab if changed--*/
+    --background: blue;;
     --textcolor: #fff;
 
     --accentcolor1: #fff;
