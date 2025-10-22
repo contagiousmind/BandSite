@@ -185,7 +185,8 @@ a {
 
 .aboutusouter .aboutusblurb .aboutusbandname {
     font-family: punk;
-    color:var(--accentcolor4);
+    /* color:var(--accentcolor4); */
+    font-size: 1.25em;
     font-weight: bold;
 }
 
@@ -243,7 +244,7 @@ a {
 .memberouter .membername {
     float:left;
     width:100%;
-    padding: 2px 0;
+    padding: 5px 0;
     text-align: center;
     font-weight: bold;
     color:var(--accentcolor3);

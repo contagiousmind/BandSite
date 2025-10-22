@@ -218,14 +218,42 @@ function BuildGigsDisplay(data) {
         ));
     }
 
-    // sort by latest first...
-    gigList.sort((a, b) => b.Date - a.Date);
 
-    // do we have a gig in the future/?.. as it's sorted check first one!
+    // do we have a gig in the future/?... put all figure gigs in seperate array we sort the other way
     var futureGigs = false;
-    if (gigList[0].Date > new Date()) {
-      futureGigs = true;
+    var futureGigList = new Array();
+    var pastGigList = new Array();
+    var todayDate =  new Date();
+    todayDate.setHours(0);
+    todayDate.setMinutes(0);
+    todayDate.setSeconds(0);
+    todayDate.setMilliseconds(0);
+
+    for(i = 0; i < gigList.length; i++) {
+        if (gigList[i].Date >= todayDate) {
+          futureGigList.push(gigList[i]);
+          futureGigs = true;
+        } else {
+          pastGigList.push(gigList[i]);
+        }
     }
+
+    // sort by latest first...
+    pastGigList.sort((a, b) => b.Date - a.Date);
+    // and otherway round for future gigs...
+    futureGigList.sort((a, b) => a.Date - b.Date);
+
+
+    // then put them back together...
+    gigList = new Array();
+    for(i = 0; i < futureGigList.length; i++) {
+        gigList.push(futureGigList[i]);
+    }
+    for(i = 0; i < pastGigList.length; i++) {
+        gigList.push(pastGigList[i]);
+    }
+
+
 
     // then display them...
     // here's the docs for js date formating options as i always forget them
@@ -259,14 +287,26 @@ function BuildGigsDisplay(data) {
     for (i = 0; i < gigList.length; i++) {
 
 
-        // gig in the past?
-        if (gigList[i].Date < new Date()) {
-            if (lastGigYear != gigList[i].Date.getFullYear()) {
-                // add section title for this year...
-                html += gigTitleTemplate.replace("$TITLE$", gigList[i].Date.getFullYear());
-            }
+        // is gig tomorrow?!
+        var gigDate = gigList[i].Date.getFullYear() + '-' + (gigList[i].Date.getMonth()+1) + '-' + gigList[i].Date.getDate();
+        var tomorrowDate = new Date().getFullYear() + '-' + (new Date().getMonth()+1) + '-' + (new Date().getDate()+1);
+        // tomorrowDate.setDate(tomorrowDate.getDate() + 1);
 
-          lastGigYear = gigList[i].Date.getFullYear();
+        if (gigDate == tomorrowDate) {
+            html += gigTitleTemplate.replace("$TITLE$", 'Tomorrow!');
+        } else if (gigDate == new Date().getFullYear() + '-' + (new Date().getMonth()+1) + '-' + new Date().getDate()) {
+            html += gigTitleTemplate.replace("$TITLE$", 'Today!');
+        } else {
+
+            // gig in the past?
+            if (gigList[i].Date <= new Date()) {
+                if (lastGigYear != gigList[i].Date.getFullYear()) {
+                    // add section title for this year...
+                    html += gigTitleTemplate.replace("$TITLE$", gigList[i].Date.getFullYear());
+                }
+
+              lastGigYear = gigList[i].Date.getFullYear();
+            }
         }
 
         html += itemTemplate.replace(/\$PROMOPOSTER\$/g, gigList[i].PromoPoster)
