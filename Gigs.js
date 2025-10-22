@@ -281,7 +281,9 @@ function BuildGigsDisplay(data) {
 
 
     // if we have gig's coming put a title up top..
-    html += gigTitleTemplate.replace("$TITLE$", 'Upcoming');
+    html += gigTitleTemplate.replace("$TITLE$", 'Upcoming')
+                            .replace("$UPCOMING$", 'upcoming')
+                        ;
     
 
     for (i = 0; i < gigList.length; i++) {
@@ -291,21 +293,31 @@ function BuildGigsDisplay(data) {
         var gigDate = gigList[i].Date.getFullYear() + '-' + (gigList[i].Date.getMonth()+1) + '-' + gigList[i].Date.getDate();
         var tomorrowDate = new Date().getFullYear() + '-' + (new Date().getMonth()+1) + '-' + (new Date().getDate()+1);
         // tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+        var upcoming = 'upcoming';
 
         if (gigDate == tomorrowDate) {
-            html += gigTitleTemplate.replace("$TITLE$", 'Tomorrow!');
+            html += gigTitleTemplate.replace("$TITLE$", 'Tomorrow!')
+                                    .replace("$UPCOMING$", 'upcoming')
+                                ;
+
         } else if (gigDate == new Date().getFullYear() + '-' + (new Date().getMonth()+1) + '-' + new Date().getDate()) {
-            html += gigTitleTemplate.replace("$TITLE$", 'Today!');
+            html += gigTitleTemplate.replace("$TITLE$", 'Today!')
+                                    .replace("$UPCOMING$", 'upcoming')
+                                ;
         } else {
 
             // gig in the past?
-            if (gigList[i].Date <= new Date()) {
+            if (gigList[i].Date <= todayDate) {
                 if (lastGigYear != gigList[i].Date.getFullYear()) {
                     // add section title for this year...
-                    html += gigTitleTemplate.replace("$TITLE$", gigList[i].Date.getFullYear());
+                    html += gigTitleTemplate.replace("$TITLE$", gigList[i].Date.getFullYear())
+                                            .replace("$UPCOMING$", '')
+                                          ;
                 }
 
               lastGigYear = gigList[i].Date.getFullYear();
+
+              upcoming = '';
             }
         }
 
@@ -313,10 +325,13 @@ function BuildGigsDisplay(data) {
                             .replace(/\$DATE\$/g, gigList[i].Date.toLocaleDateString('en-GB', dateOptions))
                             .replace(/\$EVENT\$/g, gigList[i].Event)
                             .replace(/\$VENUE\$/g, gigList[i].Venue)
+                            .replace(/\$INFO\$/g, gigList[i].Info)
                             .replace(/\$CITY\$/g, gigList[i].City)
                             .replace(/\$COUNTRY\$/g, gigList[i].Country)
 
                             .replace(/\$GIGPICTURE\$/g, gigList[i].GigPicture)
+
+                            .replace("$UPCOMING$", upcoming)
 
                     ;
     }

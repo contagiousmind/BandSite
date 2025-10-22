@@ -219,13 +219,13 @@
             </div>
 
             <div id="GigSectionTitle_Template" style="display:none;">
-                <div class="gigsectiontitle">
+                <div class="gigsectiontitle $UPCOMING$">
                     <span>$TITLE$</span>
                 </div>
             </div>
 
             <div id="GigItem_Template" style="display:none;">
-                <div class="gigitemouter">
+                <div class="gigitemouter $UPCOMING$">
                     <div class="gigitemleft" onclick="Picture_Click_Enlarge(this);"/>
                         <img src="$PROMOPOSTER$">
                     </div>
@@ -235,6 +235,9 @@
                         </div>
                         <div class="gigevent">
                             <span>$EVENT$</span>
+                        </div>
+                        <div class="giginfo">
+                            <span>$INFO$</span>
                         </div>
                         <div class="gigvenue">
                             <span>$VENUE$</span>

@@ -324,10 +324,15 @@ a {
     float:left;
     width: 100%;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
     color: var(--accentcolor2);
     padding: 30px 0;
     border-bottom: 5px solid var(--accentcolor2);
+}
+
+.gigsectiontitle.upcoming {
+    color: var(--accentcolor4);
+    border-color: var(--accentcolor4);
 }
 
 /* tab 5 gigs */
@@ -336,6 +341,11 @@ a {
     width: 100%;
     padding: 30px 0;
     border-bottom: 5px solid var(--accentcolor2);
+    font-size: 1.5em;
+}
+
+.gigitemouter.upcoming {
+    border-color: var(--accentcolor4);
 }
 
 .gigitemouter .gigitemleft {
@@ -370,21 +380,27 @@ a {
 .gigitemouter .gigitemcenter .gigdate {
     float:left;
     width: 100%;
-    padding: 5px 0;
+    padding: 5px 0 20px 0;
     font-size: 1.5em;
-    text-align: center;
 }
 
 .gigitemouter .gigitemcenter .gigevent {
     float:left;
     width: 100%;
-    padding: 5px 0;
-    font-size:1.5em;
+    padding: 5px 0 20px 0;
+    font-size:2em;
     color: var(--accentcolor3);
-    font-weight: bold;;
+    font-weight: bold;
+    text-align: center;
 }
 
 .gigitemouter .gigitemcenter .gigvenue {
+    float:left;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.gigitemouter .gigitemcenter .giginfo {
     float:left;
     width: 100%;
     padding: 5px 0;
