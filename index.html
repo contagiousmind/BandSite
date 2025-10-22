@@ -70,6 +70,10 @@
                 <span id="HomeTabTitle"></span>
             </div>
 
+            <div id="MainContent_CoverImage" class="maincontentcoverimage">
+                <img src="" />
+            </div>
+
             <div id="TabContent_Home" class="tabcontent">
                 <div class="homeimageouter">
                     <img src="Images/homelogo.jpg" width="100%" />
@@ -126,8 +130,8 @@
             </div>
 
             <div id="BandMember_Template" style="display:none;">
-                <div class="memberouter" style="height:$HEIGHT$px;width:$WIDTH$px;" onclick="MemberPicture_Click(this);">
-                    <div class="memberpicture" style="height:$HEIGHT$px;width:$WIDTH$px;">
+                <div class="memberouter" onclick="MemberPicture_Click(this);">
+                    <div class="memberpicture">
                         <img src="$MEMBERPICTURE$" width="100%" />
                     </div>
                     <div class="membername">
@@ -214,12 +218,16 @@
 
             </div>
 
+            <div id="GigSectionTitle_Template" style="display:none;">
+                <div class="gigsectiontitle">
+                    <span>$TITLE$</span>
+                </div>
+            </div>
+
             <div id="GigItem_Template" style="display:none;">
                 <div class="gigitemouter">
-                    <div class="gigitemleft">
-                        <div class="gigpromo">
-                            <img src="$PROMOPOSTER$" height="300" onclick="this.requestFullscreen()"/>
-                        </div>
+                    <div class="gigitemleft" onclick="Picture_Click_Enlarge(this);"/>
+                        <img src="$PROMOPOSTER$">
                     </div>
                     <div class="gigitemcenter">
                         <div class="gigdate">
@@ -238,17 +246,30 @@
                             <span>$COUNTRY$</span>
                         </div>
                     </div>
-                    <div class="gigitemright">
-                        <div class="gigpicture">
-                            <img src="$GIGPICTURE$" height="300" onclick="this.requestFullscreen()"/>
-                        </div>
+                    <div class="gigitemright" onclick="Picture_Click_Enlarge(this);">
+                        <img src="$GIGPICTURE$">
                     </div>
                 </div>
 
             </div>
         </div>
     
-        <div id="data_goes_here"></div>
+
+        <div id="FooterOuter" class="footerouter">
+            <div class="socialouter">
+
+
+            </div>
+        </div>
+
+            <div id="FooterSocial_Template" style="display:none;">
+                <a href="$SOCIALLINK$" target="_blank">
+                    <div class="socialitemouter">
+                        <img src="$SOCIALICON$" width="15" />
+                        <span>$SOCIALPAGE$</span>
+                    </div>
+                </a>
+            </div>
 
     </body>
 </html>

@@ -107,6 +107,8 @@ function BuildAboutUs(data) {
       , data.values[1][2]
       , data.values[1][3]
       , data.values[1][4]
+      , data.values[1][5]
+      , data.values[1][5]
   );
 
     // set page title
@@ -122,6 +124,33 @@ function BuildAboutUs(data) {
     $("#YouTubePage").html(aboutUs.YouTubePage.toLowerCase());
     $("#YouTubeLink").prop('href', 'https://www.youtube.com/@' + aboutUs.YouTubePage)
 
+    // and footer info...
+    var socialItemTemplate = $("#FooterSocial_Template").html();
+    if (aboutUs.InstaPage != "") {
+        $(".socialouter").append(
+            socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://www.instagram.com/' + aboutUs.InstaPage)
+                              .replace(/\$SOCIALICON\$/g, 'Images/Instagram_Glyph_Gradient.png')
+                              .replace(/\$SOCIALPAGE\$/g, aboutUs.InstaPage)
+        );
+    }
+
+    if (aboutUs.YouTubePage != "") {
+        $(".socialouter").append(
+            socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://www.youtube.com/@' + aboutUs.AboutUs)
+                              .replace(/\$SOCIALICON\$/g, 'Images/yt_logo.png')
+                              .replace(/\$SOCIALPAGE\$/g, aboutUs.YouTubePage)
+        );
+    }
+
+    if (aboutUs.SpotifyPage != "") {
+        $(".socialouter").append(
+            socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://open.spotify.com/' + aboutUs.SpotifyPage)
+                              .replace(/\$SOCIALICON\$/g, 'https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Green.png')
+                              .replace(/\$SOCIALPAGE\$/g, aboutUs.SpotifyPage)
+        );
+    }
+
+
     var template = $("#AboutUs_Template").html();
 
     var html = template.replace(/\$ABOUTUSPICTURE\$/g, aboutUs.AboutUsPicture)
@@ -130,6 +159,12 @@ function BuildAboutUs(data) {
                     ;
 
     $("#AboutUs_MainOuter").html(html);
+
+
+    // and the cover image...
+    if (aboutUs.CoverImage != "") {
+        $("#MainContent_CoverImage img").prop('src', aboutUs.CoverImage);
+    }
 
 }
 
@@ -192,8 +227,6 @@ function BuildMembers(data) {
       html += template.replace(/\$MEMBERNAME\$/g, membersList[i].Name)
                       .replace(/\$MEMBERPLAYS\$/g, membersList[i].Plays)
                       .replace(/\$MEMBERBLURB\$/g, membersList[i].Blurb)
-                      .replace(/\$HEIGHT\$/g, height)
-                      .replace(/\$WIDTH\$/g, width)
                       //.replace(/\$MEMBERPICTURE\$/g, membersList[i].Picture)
                       .replace(/\$MEMBERPICTURE\$/g, picList[randomNum])
                       
@@ -201,6 +234,10 @@ function BuildMembers(data) {
     }
 
     $("#BandMembers_MainOuter").html(html);
+
+    // and set the height and widths...
+    $(".memberouter").height(height).width(width);
+    $(".memberpicture").height(height).width(width);
 
 }
 
@@ -255,13 +292,47 @@ function BuildInsta() {
 }
 
 
+
+// and on click on member, enlarge?
+function Picture_Click_Enlarge(e) {
+    // 'simply' remove our sizes, but store in data to put back
+    if ($(e).data('large') == 'yes') {
+        // put them back...
+        $(e).width($(e).data('width')).height($(e).data('height'));
+        
+        // reset tags
+        $(e).data('large', 'no');
+        $(e).removeClass('large');
+
+    } else {
+
+        // when making them big, make sure this is the only one that is big...
+
+        $(e).data('width', $(e).width());
+        $(e).data('height', $(e).height());
+        $(e).data('large', 'yes');
+
+        $(e).width("").height("");
+        
+        $(e).addClass('large');
+    }
+
+      // scroll to
+    $('html, body').animate({
+      scrollTop: $(e).offset().top - 20 
+  }, 'slow');
+}
+
+
 //objects
-function AboutUs(bandName, aboutUsPicture, blurb, instaPage, youTubePage) {
+function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTubePage, spotifyPage) {
     this.BandName = bandName;
     this.AboutUsPicture= aboutUsPicture;
     this.Blurb = blurb;
+    this.CoverImage = coverImage;
     this.InstaPage = (instaPage == null ? '' : instaPage);
     this.YouTubePage = (youTubePage == null ? '' : youTubePage);
+    this.SpotifyPage = (spotifyPage == null ? '' : spotifyPage);
 }
 
 

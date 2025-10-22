@@ -221,6 +221,12 @@ function BuildGigsDisplay(data) {
     // sort by latest first...
     gigList.sort((a, b) => b.Date - a.Date);
 
+    // do we have a gig in the future/?.. as it's sorted check first one!
+    var futureGigs = false;
+    if (gigList[0].Date > new Date()) {
+      futureGigs = true;
+    }
+
     // then display them...
     // here's the docs for js date formating options as i always forget them
     // https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
@@ -232,10 +238,37 @@ function BuildGigsDisplay(data) {
         day: 'numeric'
     };
 
+    // get the size of the panel to size the images on left and right...
+    var panelWidth = $("#TabContent_5").width();
+    // left picture is 25% width... which is then 75% of the height...
+    var pictureWidth = (panelWidth / 100.00) * 25.00;
+    var pictureHeight = pictureWidth / 0.75;
+
     var itemTemplate = $("#GigItem_Template").html();
+    var gigTitleTemplate = $("#GigSectionTitle_Template").html();
     var html = '';
+
+    // track the year of each gig, to ut them in sections...
+    var lastGigYear = 0;
+
+
+    // if we have gig's coming put a title up top..
+    html += gigTitleTemplate.replace("$TITLE$", 'Upcoming');
+    
+
     for (i = 0; i < gigList.length; i++) {
-        
+
+
+        // gig in the past?
+        if (gigList[i].Date < new Date()) {
+            if (lastGigYear != gigList[i].Date.getFullYear()) {
+                // add section title for this year...
+                html += gigTitleTemplate.replace("$TITLE$", gigList[i].Date.getFullYear());
+            }
+
+          lastGigYear = gigList[i].Date.getFullYear();
+        }
+
         html += itemTemplate.replace(/\$PROMOPOSTER\$/g, gigList[i].PromoPoster)
                             .replace(/\$DATE\$/g, gigList[i].Date.toLocaleDateString('en-GB', dateOptions))
                             .replace(/\$EVENT\$/g, gigList[i].Event)
@@ -246,9 +279,15 @@ function BuildGigsDisplay(data) {
                             .replace(/\$GIGPICTURE\$/g, gigList[i].GigPicture)
 
                     ;
-
     }
 
     $("#TabContent_5").html(html);
 
+
+    // and set the height and widths of outer image things...
+    $(".gigitemleft").width(pictureWidth).height(pictureHeight);
+    $(".gigitemright").width(pictureWidth).height(pictureHeight);
+
+
 }
+
