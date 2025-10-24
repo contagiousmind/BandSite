@@ -96,11 +96,12 @@ function MenuItem_Click(tab) {
             // BuildAboutUs();
             // BuildFAQs();
             // BuildMembers();
-            BuildInsta();
+            // BuildInsta();
 
             GetData('Home_AboutUs', BuildAboutUs);
             GetData('Home_WhereDidThatNameComeFrom', BuildFAQs);
             GetData('Home_Members', BuildMembers);
+            GetData('Photos', BuildInsta);
 
             break;
 
@@ -181,9 +182,36 @@ function GetData(sheetName, completeEvent) {
         return;
     }
 
-        // photo's key - AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA
-    var aaa = 'AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA'; 
-    var spreadsheetId = '17D3wVbnIUR5WS0LpTRUniBTU9rGuXmbWuq94i2GmRPQ'; // Replace with your spreadsheet ID
+    // photo's key - AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA
+
+    // read site from url to get sheet id?\
+    var aaa = ''; 
+    var spreadsheetId = ''
+    if (location.host == 'tpap') {
+        aaa = 'AIzaSyAjynx0jJxrinbDqmsVFEA3cCmKEDC9NG0';
+        spreadsheetId = '17D3wVbnIUR5WS0LpTRUniBTU9rGuXmbWuq94i2GmRPQ';
+
+    } else if (location.host == 'ftf') {
+        aaa = 'AIzaSyB4w1wbWjlq-__PtXnAG-PDZUia3xKxHxc';
+        spreadsheetId = '1plf2xZA8KHbPHT_Lb1MZp7Lsq3AC4uFGh36eUVL4xHM';
+
+    } else {
+        // check for param that we use in dev...
+        var query = window.location.search;
+        if (query != "") {
+            if (query.replace('?','') == 'ftf') {
+                aaa = 'AIzaSyB4w1wbWjlq-__PtXnAG-PDZUia3xKxHxc';
+                spreadsheetId = '1plf2xZA8KHbPHT_Lb1MZp7Lsq3AC4uFGh36eUVL4xHM';
+            }
+        } else {
+            // dev
+            aaa = 'AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA'; 
+            spreadsheetId = '17D3wVbnIUR5WS0LpTRUniBTU9rGuXmbWuq94i2GmRPQ'; // Replace with your spreadsheet ID
+        
+        }
+    }
+
+
     // var sheetName = 'Sheet1'; // Replace with your sheet name
     var url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${aaa}`;
 

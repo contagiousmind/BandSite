@@ -1,26 +1,5 @@
 
 var videoList = new Array();
-// videoList.push(new YoutubeVideo(
-//       'czhJQ-_EJwE'
-//     , 'Barking at Ghosts'
-//     , ' Live @Hunstanton Battle of the Bands 2025'
-//     , 'wide'
-// ));
-
-// videoList.push(new YoutubeVideo(
-//       'GP6FhKt3C4U'
-//     , 'Strange by my Side'
-//     , ' Live @The Tram Depot - August 2025'
-//     , 'wide'
-// ));
-
-// videoList.push(new YoutubeVideo(
-//       'iKNnCNSaMDk'
-//     , 'Better Than Before'
-//     , ' Live @The Tram Depot - August 2025'
-//     , 'wide'
-// ));
-
 
 
 
