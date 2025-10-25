@@ -31,6 +31,12 @@ function GetThemeColors() {
 
                 r.style.setProperty('--'+data.values[i][0], data.values[i][1]);
             }
+
+            // set the segments to gradients...
+            //   border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
+            // subtle
+            $(".bordergradienttag").prop('style', 'border-image: linear-gradient(to right, var(--accentcolor3) 0%, var(--accentcolor4) 100%) 1;');
+
         }
     })
 }
