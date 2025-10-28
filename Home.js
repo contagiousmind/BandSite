@@ -96,7 +96,7 @@ function SetFavIcon() {
         link.rel = 'icon';
         document.head.appendChild(link);
     }
-    link.href = '/' + aboutUs.BandName.toLowerCase() + 'favicon.ico';
+    link.href = '/' + aboutUs.BandName.toLowerCase().replace(/ /g, '') + 'favicon.ico';
     
 }
 
