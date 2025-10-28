@@ -19,7 +19,6 @@ $(function () {
 //     }
 // }
 
-
 function GetThemeColors() {
     GetData('Theme', function(data) {
         if (data.values.length > 0) {
