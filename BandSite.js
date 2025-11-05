@@ -1,23 +1,30 @@
 // JavaScript source code
 
+var c_LoadedSite = ''; 
 
 $(function () {
     
-    MenuItem_Click('Home');
-    // ReadQueryParam();
+    // always start by loaded about us...
+    GetData('Home_AboutUs', BuildAboutUs);
+
+    // MenuItem_Click('Home');
+    ReadQueryParam();
     
     GetThemeColors();
 
 });
 
-// function ReadQueryParam() {
-//     var query = window.location.search;
-//     if (query != "") {
-//         MenuItem_Click(query.replace('?',''));
-//     } else {
-//         MenuItem_Click('Home');
-//     }
-// }
+function ReadQueryParam() {
+
+    var searchParams = new URLSearchParams(window.location.search);
+    var page = 'Home';
+    if (searchParams.has('p')) {
+        page = searchParams.get('p');
+    }
+
+    MenuItem_Click(page);
+
+}
 
 function GetThemeColors() {
     GetData('Theme', function(data) {
@@ -98,12 +105,7 @@ function MenuItem_Click(tab) {
     switch (tab.toLowerCase()) {
 
         case 'home':
-            // BuildAboutUs();
-            // BuildFAQs();
-            // BuildMembers();
-            // BuildInsta();
-
-            GetData('Home_AboutUs', BuildAboutUs);
+            // GetData('Home_AboutUs', BuildAboutUs);
             GetData('Home_WhereDidThatNameComeFrom', BuildFAQs);
             GetData('Home_Members', BuildMembers);
             GetData('Photos', BuildInsta);
@@ -111,6 +113,8 @@ function MenuItem_Click(tab) {
             break;
 
         case 'news':     // news
+            GetData('News', BuildNews);
+
             break;
 
         case 'videos':         // videos
@@ -120,28 +124,34 @@ function MenuItem_Click(tab) {
 
         case 'music':     // music
             GetData('Music', BuildMusic);
+
             break;
 
         case 'gigs':
             GetData('Gigs', BuildGigsDisplay);
+
             break;
 
         case 'lyrics':
+
+
             break;
 
         case 'photos':
+
             break;
+
     }
 
 
-    // // add it to url...
+    // add it to url...
     // if (location.host != "") {
-    //     if (tab != 'Home') {
-    //         window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?' + tab);
+        if (tab != 'Home') {
+            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
 
-    //     } else {
-    //         window.history.replaceState(aboutUs.BandName, 'Title', location.host + location.pathname);
-    //     }
+        } else {
+            window.history.replaceState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+        }
     // }
 
 }
@@ -154,11 +164,18 @@ function GetData(sheetName, completeEvent) {
         return;
     }
 
+    var searchParams = new URLSearchParams(window.location.search);
+
+    if (searchParams.has('s')) {
+        c_LoadedSite = searchParams.get('s');
+    }
+
     // photo's key - AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA
 
     // read site from url to get sheet id?\
-    var aaa = ''; 
-    var spreadsheetId = ''
+    var aaa = 'AIzaSyBnvRLQ5Wfv5MNb5q0APNsijA9xXpOYnaA'; 
+    var spreadsheetId = '17D3wVbnIUR5WS0LpTRUniBTU9rGuXmbWuq94i2GmRPQ'; // Replace with your spreadsheet ID
+
     if (location.host == 'contagiousmind.github.io') {
         aaa = 'AIzaSyAjynx0jJxrinbDqmsVFEA3cCmKEDC9NG0';
         spreadsheetId = '17D3wVbnIUR5WS0LpTRUniBTU9rGuXmbWuq94i2GmRPQ';
@@ -169,9 +186,8 @@ function GetData(sheetName, completeEvent) {
 
     } else {
         // check for param that we use in dev...
-        var query = window.location.search;
-        if (query != "") {
-            if (query.replace('?','') == 'ftf') {
+        if (c_LoadedSite != "") {
+            if (c_LoadedSite == 'ftf') {
                 aaa = 'AIzaSyB4w1wbWjlq-__PtXnAG-PDZUia3xKxHxc';
                 spreadsheetId = '1plf2xZA8KHbPHT_Lb1MZp7Lsq3AC4uFGh36eUVL4xHM';
             }

@@ -149,6 +149,8 @@ function BuildGigsDisplay(data) {
                             .replace(/\$INFO\$/g, gigList[i].Info)
                             .replace(/\$CITY\$/g, gigList[i].City)
                             .replace(/\$COUNTRY\$/g, gigList[i].Country)
+                            .replace(/\$DOORSTIME\$/g, gigList[i].DoorsTime)
+                            .replace(/\$STAGETIME\$/g, gigList[i].StageTime)
 
                             .replace(/\$GIGPICTURE\$/g, gigList[i].GigPicture)
 
