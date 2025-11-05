@@ -147,10 +147,10 @@ function MenuItem_Click(tab) {
     // add it to url...
     // if (location.host != "") {
         if (tab != 'Home') {
-            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.href + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
 
         } else {
-            window.history.replaceState(aboutUs.BandName, 'Title', location.host + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            window.history.replaceState(aboutUs.BandName, 'Title', location.href + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
         }
     // }
 
