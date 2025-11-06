@@ -77,15 +77,6 @@ function BuildGigsDisplay(data) {
 
 
     // then display them...
-    // here's the docs for js date formating options as i always forget them
-    // https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
-    var dateOptions = {
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric'
-    };
 
     // get the size of the panel to size the images on left and right...
     var panelWidth = $("#TabContent_5").width();

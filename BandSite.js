@@ -2,6 +2,16 @@
 
 var c_LoadedSite = ''; 
 
+// here's the docs for js date formating options as i always forget them
+// https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+var dateOptions = {
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric'
+};
+
 $(function () {
     
     // always start by loaded about us...
@@ -108,7 +118,7 @@ function MenuItem_Click(tab) {
             // GetData('Home_AboutUs', BuildAboutUs);
             GetData('Home_WhereDidThatNameComeFrom', BuildFAQs);
             GetData('Home_Members', BuildMembers);
-            GetData('Photos', BuildInsta);
+            GetData('Insta', BuildInsta);
 
             break;
 
@@ -138,6 +148,7 @@ function MenuItem_Click(tab) {
             break;
 
         case 'photos':
+            GetData('Photos', BuildPhotos);
 
             break;
 
@@ -147,10 +158,10 @@ function MenuItem_Click(tab) {
     // add it to url...
     // if (location.host != "") {
         if (tab != 'Home') {
-            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.href + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
 
         } else {
-            window.history.replaceState(aboutUs.BandName, 'Title', location.href + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            window.history.replaceState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
         }
     // }
 

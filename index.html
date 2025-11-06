@@ -9,13 +9,14 @@
         <link href="BandSite.min.css" rel="stylesheet" type="text/css" />
         <link href="BandSite-M.min.css" rel="stylesheet" type="text/css" />
 
-        <script src="BandSite.js" type="text/javascript"></script>
+        <script src="BandSite.min.js" type="text/javascript"></script>
 
         <script src="Home.min.js" type="text/javascript"></script>
         <script src="Gigs.min.js" type="text/javascript"></script>
         <script src="Videos.min.js" type="text/javascript"></script>
         <script src="Music.min.js" type="text/javascript"></script>
         <script src="News.min.js" type="text/javascript"></script>
+        <script src="Photos.min.js" type="text/javascript"></script>
 
 
     </head>
@@ -282,6 +283,60 @@
 
             </div>
         </div>
+
+
+        <div id="MainContent_Lyrics" class="maincontent">
+            <div id="MainContentTitle_6" class="maincontenttitle">
+                <span>sing along with us</span>
+            </div>
+
+            <div id="TabContent_6" class="tabcontent">
+
+            </div>
+
+            <div id="LyricsItem_Template" style="display:none;">
+             
+            </div>
+
+        </div>
+
+
+
+        <div id="MainContent_Photos" class="maincontent">
+            <div id="MainContentTitle_7" class="maincontenttitle">
+                <span>photos</span>
+            </div>
+
+            <div id="TabContent_7" class="tabcontent">
+
+            </div>
+
+            <div id="PhotosFolder_Template" style="display:none;">
+                <div class="photosfolderouter">
+                    <div class="photofoldertitleouter" onclick="PhotoItemFolderClick($FOLDERID$);">
+                        <div class="photosfoldertitle">
+                            <span>$TITLE$</span>
+                        </div>
+                        <div class="photofolderdate">
+                            <span>$DATE$</span>
+                        </div>
+                    </div>
+                    <div class="photositemsouter" style="display:none;" id="PhotoItems_$FOLDERID$">
+                        $PICTURE$
+                    </div>
+                </div>
+            </div>
+
+            <div id="PhotosItem_Template" style="display:none;">
+                <div class="photoitemouter $COVER$" onclick="Picture_Click_Enlarge(this);">
+                    <img src="$PICTURE$" />
+                </div>
+            </div>
+
+        </div>
+
+
+
     
 
         <div id="FooterOuter" class="footerouter">

@@ -505,9 +505,61 @@ a {
 
 
 
+/* tab 7 photos */
+
+.photosfolderouter {
+    float:left;
+    width: 100%;
+}
+
+.photosfolderouter .photofoldertitleouter {
+    float:left;
+    width:100%;
+    border-bottom: 5px solid var(--accentcolor3);
+    color: var(--accentcolor3);
+    font-weight: 600;
+}
+
+.photosfolderouter .photofoldertitleouter:hover {
+    color: var(--accentcolor4);
+    cursor: pointer;
+    border-color: var(--accentcolor4);
+}
+
+.photosfolderouter .photofoldertitleouter .photosfoldertitle {
+    float:left;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 0 0;
+    font-size: 2em;
+
+}
+
+.photosfolderouter .photofoldertitleouter .photofolderdate {
+    float:left;
+    width:100%;
+    text-align:right;
+    font-size: 1.25em;
+}
 
 
 
+.photosfolderouter .photositemsouter {
+    float:left;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.photosfolderouter .photositemsouter .photoitemouter {
+    float:left;
+    margin-bottom:1px;
+}
+
+.photosfolderouter .photositemsouter .photoitemouter img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
 
 
 
@@ -533,7 +585,6 @@ a {
     width: 100%;
     padding: 10px 0;
 }
-
 
 
 
