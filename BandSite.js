@@ -158,10 +158,10 @@ function MenuItem_Click(tab) {
     // add it to url...
     // if (location.host != "") {
         if (tab != 'Home') {
-            window.history.replaceState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            window.history.pushState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
 
         } else {
-            window.history.replaceState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            window.history.pushState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
         }
     // }
 
