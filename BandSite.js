@@ -154,14 +154,21 @@ function MenuItem_Click(tab) {
 
     }
 
-
+    var urlWithParms = '';
+    urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?filterby=' + c_memberFilterBy + '&filtertype=' + c_memberFilterType;
+    window.history.pushState({ path: urlWithParms }, '', urlWithParms);
     // add it to url...
     // if (location.host != "") {
         if (tab != 'Home') {
-            window.history.pushState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            // window.history.pushState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : '');
+            window.history.pushState({ path: urlWithParms }, '', urlWithParms);
 
         } else {
-            window.history.pushState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            // window.history.pushState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+            urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : '');
+            window.history.pushState({ path: urlWithParms }, '', urlWithParms);
+
         }
     // }
 
