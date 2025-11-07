@@ -155,8 +155,6 @@ function MenuItem_Click(tab) {
     }
 
     var urlWithParms = '';
-    urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?filterby=' + c_memberFilterBy + '&filtertype=' + c_memberFilterType;
-    window.history.pushState({ path: urlWithParms }, '', urlWithParms);
     // add it to url...
     // if (location.host != "") {
         if (tab != 'Home') {
