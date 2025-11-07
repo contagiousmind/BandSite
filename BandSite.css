@@ -496,9 +496,25 @@ a {
     display:none;
 }
 
+.gigitemouter .gigitemcenter .photos {
+    float:left;
+    width: 100%;
+    padding: 5px 0;
+    color: var(--accentcolor4);
+}
+
+.gigitemouter .gigitemcenter .photos:hover {
+    color: var(--accentcolor3);
+    cursor: pointer;
+}
+
 .gigitemouter.upcoming .doorstime,
 .gigitemouter.upcoming .stagetime {
     display:block;
+}
+
+.gigitemouter.upcoming .photos {
+    display:none;
 }
 
 

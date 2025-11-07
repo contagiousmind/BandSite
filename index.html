@@ -275,6 +275,9 @@
                         <div class="stagetime">
                             <span>We're on at $STAGETIME$</span>
                         </div>
+                        <div class="photos" onclick="GigViewPhotos('$PHOTOFOLDER$');">
+                            <span>See Pictures</span>
+                        </div>
                     </div>
                     <div class="gigitemright" onclick="Picture_Click_Enlarge(this);">
                         <img src="$GIGPICTURE$">
@@ -312,8 +315,8 @@
             </div>
 
             <div id="PhotosFolder_Template" style="display:none;">
-                <div class="photosfolderouter">
-                    <div class="photofoldertitleouter" onclick="PhotoItemFolderClick($FOLDERID$);">
+                <div class="photosfolderouter" id="PhotoFolder_$IDNAME$">
+                    <div class="photofoldertitleouter" onclick="PhotoItemFolderClick('$IDNAME$');">
                         <div class="photosfoldertitle">
                             <span>$TITLE$</span>
                         </div>
@@ -321,7 +324,7 @@
                             <span>$DATE$</span>
                         </div>
                     </div>
-                    <div class="photositemsouter" style="display:none;" id="PhotoItems_$FOLDERID$">
+                    <div class="photositemsouter" style="display:none;" id="PhotoItems_$IDNAME$">
                         $PICTURE$
                     </div>
                 </div>

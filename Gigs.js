@@ -4,7 +4,7 @@
  
 
 // objects
-function Gig(date, event, info, venue, city, country, bandList, ticketLink, doorsTime, stageTime, promoPoster, gigPicture) {
+function Gig(date, event, info, venue, city, country, bandList, ticketLink, doorsTime, stageTime, photoFolder, promoPoster, gigPicture) {
     this.Date = date;
     this.Event = event;
     this.Info = info;
@@ -15,6 +15,7 @@ function Gig(date, event, info, venue, city, country, bandList, ticketLink, door
     this.TicketLink = ticketLink;
     this.DoorsTime = doorsTime;
     this.StageTime = stageTime;
+    this.PhotoFolder = (photoFolder == undefined ? "" : photoFolder);
     this.PromoPoster = promoPoster;
     this.GigPicture = gigPicture
 }
@@ -36,6 +37,7 @@ function BuildGigsDisplay(data) {
           , data.values[i][9]
           , data.values[i][10]
           , data.values[i][11]
+          , data.values[i][12]
         ));
     }
 
@@ -146,6 +148,8 @@ function BuildGigsDisplay(data) {
                             .replace(/\$GIGPICTURE\$/g, gigList[i].GigPicture)
 
                             .replace("$UPCOMING$", upcoming)
+
+                            .replace(/\$PHOTOFOLDER\$/g,  GetCleanFolderName(gigList[i].PhotoFolder))
 
                     ;
     }

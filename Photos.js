@@ -22,10 +22,10 @@ function BuildPhotos(data) {
         }
 
         photoList.push(new PhotoItem(thisTitle, thisDate, thisItemList));
-
     }
 
-
+    // sort by date...
+    photoList.sort((a, b) => b.Date - a.Date);
 
 
     var folderTemplate = $("#PhotosFolder_Template").html();
@@ -44,11 +44,14 @@ function BuildPhotos(data) {
                                     .replace(/\$COVER\$/g, 'cover')
                                 ;
 
+        var thisFolderName = GetCleanFolderName(photoList[i].Title);
+
         html += folderTemplate.replace(/\$TITLE\$/g, photoList[i].Title)
                             .replace(/\$TITLEPICTURE\$/g, photoList[i].Items[0])
                             .replace(/\$FOLDERID\$/g, i.toString())
                             .replace(/\$PICTURE\$/g, coverImage)
                             .replace(/\$DATE\$/g, photoList[i].Date.toLocaleDateString('en-GB', dateOptions))
+                            .replace(/\$IDNAME\$/g, thisFolderName)
                         ;
 
     }
@@ -58,24 +61,42 @@ function BuildPhotos(data) {
     // set size of cover image
     $(".photoitemouter.cover").width(w).height(h);
 
+    if (c_PhotoFolderName != "") {
+        // click it!?
+        $("#PhotoFolder_" + c_PhotoFolderName).find('.photofoldertitleouter').click();
+    }
 }
 
 
-function PhotoItemFolderClick(id) {
+function PhotoItemFolderClick(idName) {
+
+    if (idName != undefined) {
+        c_PhotoFolderName = idName;
+    }
     
     // close all first...
     $(".photositemsouter").hide();
 
-    $("#PhotoItems_" + id).show(300);
-    if ($("#PhotoItems_" + id).data('loaded') != 'yes') {
+    $("#PhotoItems_" + c_PhotoFolderName).show(300);
+    if ($("#PhotoItems_" + c_PhotoFolderName).data('loaded') != 'yes') {
         // load the pictures in...
-        LoadItems(id);
+        LoadItems();
 
     }
 
+    // scroll to
+    $('html, body').animate({
+        scrollTop: $("#PhotoItems_" + c_PhotoFolderName).offset().top - 100 
+    }, 'slow');
+
+
+    // always add to url for easy sharing, and we can link from other places...
+    var parms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?p=Photos' + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : '') + '&f=' + c_PhotoFolderName;
+    window.history.pushState({ path: parms }, '', parms);
+
 }
 
-function LoadItems(id) {
+function LoadItems() {
     var itemTemplate = $("#PhotosItem_Template").html();
     var html = '';
 
@@ -83,14 +104,24 @@ function LoadItems(id) {
     var w = ($("#TabContent_7").width() / 100) * 15;        // just under 16 & so we get 6 across
     var h = w / 0.75;
 
+    // find the photo's based on name...
+    var id = -1;
+    for(i = 0; i < photoList.length; i++) {
+        var thisFolderName = GetCleanFolderName(photoList[i].Title);
+        if (thisFolderName == c_PhotoFolderName) {
+            id = i;
+            break;
+        }
+    }
+
     for(i = 0; i < photoList[id].Items.length; i++) {
         html += itemTemplate.replace(/\$PICTURE\$/g, photoList[id].Items[i])
                             .replace(/\$COVER\$/g, 'grid')
                         ;
     }
 
-    $("#PhotoItems_" + id).data('loaded', 'yes');
-    $("#PhotoItems_" + id).append(html);
+    $("#PhotoItems_" + c_PhotoFolderName).data('loaded', 'yes');
+    $("#PhotoItems_" + c_PhotoFolderName).append(html);
 
     $(".photoitemouter.grid").width(w).height(h);
 }
@@ -100,5 +131,20 @@ function PhotoItem(title, date, items) {
     this.Date = date;
     this.Items = items;
 }
+
+
+function GetCleanFolderName(name) {
+    return name.replace(/ /g, '')
+                .replace(/@/g, '')
+                .replace(/-/g, '')
+        ;
+}
+
+
+
+function GigViewPhotos(photosFolder) {
+    window.location = urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?p=Photos&f=' + GetCleanFolderName(photosFolder);
+}
+
 
 
