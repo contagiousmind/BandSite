@@ -1,6 +1,6 @@
 var newsList = new Array();
 var pageSize = 5;
-var pageNumber = -1;
+var pageNumber = 0;
 
 
 function BuildNews(data) {
@@ -23,7 +23,9 @@ function BuildNews(data) {
 
 }
 
-function BuildNewsPage() {
+function BuildNewsPage(e) {
+
+    $(e).remove();
 
     pageNumber++;
     var from = 0;
@@ -36,6 +38,7 @@ function BuildNewsPage() {
 
 
     var template = $("#NewsItem_Template").html();
+    var loadMoreTemplate = $("#News_LoadMore_Template").html();
     var html = "";
 
     // do the sizes for the images...
@@ -66,8 +69,12 @@ function BuildNewsPage() {
         }
     }
 
+    if (to < newsList.length) {
+        html += loadMoreTemplate;
+    }
 
     $("#TabContent_2").append(html);
+
 
     // then set the sizes...
     $(".newsiteminner.pictureleft .newsitempicture").width(pictureWidthSide).height(pictureHeightSide);

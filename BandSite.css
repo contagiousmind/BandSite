@@ -294,7 +294,7 @@ a:hover {
 }
 
 
-/*-- Tab 2 videos --*/
+/*-- Tab 2 News --*/
 .newsitemouter {
     float:left;
     width: 95%;
@@ -349,6 +349,22 @@ a:hover {
     width:90%;
 }
 
+.newsloadmoreouter {
+    float:left;
+    width: 100%;
+    font-size: 3em;
+    text-align: center;
+    cursor: pointer;
+    color:var(--accentcolor4);
+    border-top:5px solid var(--accentcolor4);
+    border-bottom:5px solid var(--accentcolor4);
+    padding: 10px 0;
+}
+
+.newsloadmoreouter:hover {
+    color:var(--accentcolor3);
+    border-color: var(--accentcolor3);
+}
 
 
 /*-- Tab 3 videos --*/

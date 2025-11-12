@@ -47,6 +47,7 @@ function BuildPhotos(data) {
         var thisFolderName = GetCleanFolderName(photoList[i].Title);
 
         html += folderTemplate.replace(/\$TITLE\$/g, photoList[i].Title)
+                            .replace(/\$PHOTOCOUNT\$/g, "[" + photoList[i].Items.length + "]")
                             .replace(/\$TITLEPICTURE\$/g, photoList[i].Items[0])
                             .replace(/\$FOLDERID\$/g, i.toString())
                             .replace(/\$PICTURE\$/g, coverImage)

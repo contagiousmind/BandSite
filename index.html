@@ -185,6 +185,12 @@
                 </div>
             </div>
 
+            <div id="News_LoadMore_Template" style="display:none;">
+                <div class="newsloadmoreouter" onclick="BuildNewsPage(this);">
+                    <span>More...</span>
+                </div>
+            </div>
+
         </div>
 
 
@@ -319,6 +325,7 @@
                     <div class="photofoldertitleouter" onclick="PhotoItemFolderClick('$IDNAME$');">
                         <div class="photosfoldertitle">
                             <span>$TITLE$</span>
+                            <span style="float:right;">$PHOTOCOUNT$</span>
                         </div>
                         <div class="photofolderdate">
                             <span>$DATE$</span>

@@ -99,6 +99,7 @@ function BuildGigsDisplay(data) {
                             .replace("$UPCOMING$", 'upcoming')
                         ;
     
+    var nextYearGig = false;
 
     for (i = 0; i < gigList.length; i++) {
 
@@ -118,6 +119,11 @@ function BuildGigsDisplay(data) {
             html += gigTitleTemplate.replace("$TITLE$", 'Today!')
                                     .replace("$UPCOMING$", 'upcoming')
                                 ;
+        } else if (gigList[i].Date.getFullYear() == (new Date().getFullYear() + 1) && !nextYearGig) {
+            html += gigTitleTemplate.replace("$TITLE$", (new Date().getFullYear() + 1).toString())
+                                .replace("$UPCOMING$", 'upcoming')
+                            ;
+
         } else {
 
             // gig in the past?
