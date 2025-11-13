@@ -113,7 +113,7 @@ function SetMetaTags() {
     $("head").append('<meta property="og:description" content="' + aboutUs.BandName + aboutUs.Blurb + '" >');
     $("head").append('<meta property="og:url" content="' + location.href + '" >');
     // $("head").append('<meta property="og:image" content="' + aboutUs.AboutUsPicture + '" >');
-    $("head").append('<meta property="og:image" content="' + location.origin + location.pathname + aboutUs.BandName.toLowerCase().replace(/ /g, '') + '_favicon.ico' + '" >');
+    // $("head").append('<meta property="og:image" content="' + location.origin + location.pathname + aboutUs.BandName.toLowerCase().replace(/ /g, '') + '_favicon.ico' + '" >');
     
     
     $("head").append('<meta property="og:image:width" content="' + $('.aboutuspicture').width() + '" >');
