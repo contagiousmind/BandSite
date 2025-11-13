@@ -124,6 +124,9 @@ function MenuItem_Click(tab) {
             GetData('Home_Members', BuildMembers);
             GetData('Insta', BuildInsta);
 
+            // prep gig data here
+            GetData('Gigs', SetupGigs);
+
             break;
 
         case 'news':     // news
@@ -142,7 +145,7 @@ function MenuItem_Click(tab) {
             break;
 
         case 'gigs':
-            GetData('Gigs', BuildGigsDisplay);
+            BuildGigsDisplay();
 
             break;
 

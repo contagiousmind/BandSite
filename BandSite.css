@@ -33,7 +33,6 @@ a:hover {
     color: var(--accentcolor4);
 }
 
-
 .mainmenu {
     float: left;
     width: 100%;
@@ -91,7 +90,7 @@ a:hover {
     float:left;
     width: 80%;
     margin-left: 10%;
-    padding-top: 100px;
+    padding-top: 50px;
     display:none;
 }
 
@@ -100,7 +99,6 @@ a:hover {
     width: 100%;
     text-align: center;
     font-size: 5em;
-    padding-bottom: 5%;
     border-bottom: 5px solid var(--accentcolor2);
     font-family: 'punk';
 }
@@ -465,7 +463,6 @@ a:hover {
     width: 100%;
 }
 
-
 .gigitemouter .gigitemcenter {
     float:left;
     width: 47.5%;
@@ -513,6 +510,33 @@ a:hover {
     padding: 5px 0;
 }
 
+.gigitemouter .gigitemcenter .eventlink {
+    float:left;
+    width: 100%;
+    padding: 2px 0;
+    margin:3px 0;
+    text-align: center;
+    border-top: 2px solid var(--accentcolor3);
+    border-bottom: 2px solid var(--accentcolor3);
+}
+
+.gigitemouter .gigitemcenter .ticketlink {
+    float:left;
+    width: 100%;
+    padding: 2px 0;
+    margin:3px 0;
+    text-align: center;
+    font-size: 1.5em;;
+    border-top: 2px solid var(--accentcolor3);
+    border-bottom: 2px solid var(--accentcolor3);
+}
+
+.gigitemouter .gigitemcenter .eventlink:hover,
+ .gigitemouter .gigitemcenter .ticketlink:hover {
+    border-color: var(--accentcolor4);
+    cursor: pointer;
+}   
+
 .gigitemouter .gigitemcenter .doorstime {
     float:left;
     width: 100%;
@@ -534,6 +558,7 @@ a:hover {
     width: 100%;
     padding: 5px 0;
     color: var(--accentcolor4);
+    text-align: center;
 }
 
 .gigitemouter .gigitemcenter .photos:hover {
@@ -541,8 +566,10 @@ a:hover {
     cursor: pointer;
 }
 
-.gigitemouter.upcoming .doorstime,
-.gigitemouter.upcoming .stagetime {
+.gigitemouter.upcoming .gigitemcenter .doorstime,
+.gigitemouter.upcoming .gigitemcenter .stagetime,
+.gigitemouter.upcoming .gigitemcenter .eventlink,
+.gigitemouter.upcoming .gigitemcenter .ticketlink  {
     display:block;
 }
 
@@ -550,7 +577,17 @@ a:hover {
     display:none;
 }
 
+.gigitemouter.upcoming .gigitemcenter {
+    width:72.5%;
+}
 
+.gigitemouter.upcoming .gigitemleft {
+    float:right;
+}
+
+.gigitemouter.upcoming .gigitemright {
+    display:none;
+}
 
 
 
@@ -644,5 +681,7 @@ a:hover {
 
 
 
-
+.hide {
+    display:none !important;
+}
 
