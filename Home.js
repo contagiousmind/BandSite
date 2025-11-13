@@ -105,7 +105,7 @@ function SetMetaTags() {
 
     // get description and add name to it...
     var metaDesc = document.querySelector('meta[name="description"]').content;
-    $('meta[name="description"]').attr("content", aboutUs.BandName + metaDesc);
+    $('meta[name="description"]').attr("content", aboutUs.BandName + ' ' + metaDesc);
 
 
 
