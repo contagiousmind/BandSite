@@ -102,11 +102,23 @@ function SetFavIcon() {
 }
 
 function SetMetaTags() {
+
+    // get description and add name to it...
+    var metaDesc = document.querySelector('meta[name="description"]').content;
+    $('meta[name="description"]').attr("content", aboutUS.BandName + metaDesc);
+
+
+
     $("head").append('<meta property="og:title" content="' + aboutUs.BandName + ' | Your favourite local band" />');
     $("head").append('<meta property="og:description" content="' + aboutUs.BandName + aboutUs.Blurb + '" />');
     $("head").append('<meta property="og:url" content="' + location.href + '" />');
-    $("head").append('<meta property="og:image" content="' + aboutUs.CoverImage + '" />');
+    $("head").append('<meta property="og:image" content="' + aboutUs.AboutUsPicture + '" />');
+    $("head").append('<meta property="og:image:width" content="' + $('.aboutuspicture').width() + '" />');
+    $("head").append('<meta property="og:image:height" content="' + $('.aboutuspicture').height() + '" />');
 
+
+    
+  
 
 
     // 
