@@ -226,7 +226,7 @@ function BuildInsta(data) {
     var template = $("#InstaItem_Template").html();
     var html = "";
 
-    for(i = 0; i < instaList.length; i++) {
+    for(i = instaList.length-1; i > -1; i--) {
         html += template.replace(/\$INSTAPICTURE\$/g, instaList[i].Src)
                         .replace(/\$INSTALINK\$/g, instaList[i].Link)
                 ;
@@ -234,6 +234,11 @@ function BuildInsta(data) {
 
 
     $("#InstaPictures_MainOuter").html(html);
+
+    var w = ($("#InstaPictures_MainOuter").width() / 5) - 5;        // 5 across with a gap
+    var h = w / 0.75;
+    // and set size of pictures...
+    $(".instaitemouter").width(w).height(h);
 
 }
 
