@@ -87,6 +87,7 @@ function BuildAboutUs(data) {
     }
 
     SetFavIcon();
+    SetMetaTags();
 }
 
 function SetFavIcon() {
@@ -98,6 +99,17 @@ function SetFavIcon() {
     }
     link.href = location.origin + location.pathname + aboutUs.BandName.toLowerCase().replace(/ /g, '') + '_favicon.ico';
     
+}
+
+function SetMetaTags() {
+    $("head").append('<meta property="og:title" content="' + aboutUs.BandName + ' | Your favourite local band" />');
+    $("head").append('<meta property="og:description" content="' + aboutUs.BandName + aboutUs.Blurb + '" />');
+    $("head").append('<meta property="og:url" content="' + location.href + '" />');
+    $("head").append('<meta property="og:image" content="' + aboutUs.CoverImage + '" />');
+
+
+
+    // 
 }
 
 function BuildFAQs(data) {
@@ -136,6 +148,7 @@ function BuildMembers(data) {
           , data.values[i][1]
           , data.values[i][2]
           , data.values[i][3]
+          , data.values[i][4]
         ));
     }
 
@@ -166,6 +179,7 @@ function BuildMembers(data) {
                       .replace(/\$MEMBERBLURB\$/g, membersList[i].Blurb)
                       //.replace(/\$MEMBERPICTURE\$/g, membersList[i].Picture)
                       .replace(/\$MEMBERPICTURE\$/g, picList[randomNum])
+                      .replace(/\$INSTA\$/g, membersList[i].Insta)
                       
               ;
     }
@@ -288,11 +302,12 @@ function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTube
 }
 
 
-function BandMember(name, picture, blurb, plays) {
+function BandMember(name, picture, blurb, plays, insta) {
     this.Name = name;
     this.Picture = picture;
     this.Blurb = blurb;
     this.Plays = plays;
+    this.Insta = insta;
 }
 
 

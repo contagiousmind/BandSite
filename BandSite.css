@@ -268,6 +268,20 @@ a:hover {
     text-align: center;
 }
 
+.memberouter .memberblurb {
+    float:left;
+    width: 100%;
+    display:none;
+}
+
+.memberouter .memberinsta {
+    float:left;
+    width: 100%;
+    font-family: punk;
+}
+
+
+
 .instatitle {
     float:left;
     width:100%;
