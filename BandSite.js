@@ -163,23 +163,21 @@ function MenuItem_Click(tab) {
 
     var urlWithParms = '';
     // add it to url...
-    // if (location.host != "") {
-        if (tab != 'Home') {
-            // window.history.pushState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
-            urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : '');
-            window.history.pushState({ path: urlWithParms }, '', urlWithParms);
+    if (tab != 'Home') {
+        // window.history.pushState(tab + ' | ' + aboutUs.BandName, 'Title', location.host + location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+        urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?p=' + tab + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : '');
+        window.history.pushState({ path: urlWithParms }, '', urlWithParms);
 
-            if (aboutUs.BandName != undefined) {
-                document.title = tab + " | " + aboutUs.BandName;
-            }
-
-        } else {
-            // window.history.pushState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
-            urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : '');
-            window.history.pushState({ path: urlWithParms }, '', urlWithParms);
-
+        if (aboutUs.BandName != undefined) {
+            document.title = tab + " | " + aboutUs.BandName;
         }
-    // }
+
+    } else {
+        // window.history.pushState(aboutUs.BandName, 'Title', location.host + location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : ''));
+        urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + (c_LoadedSite != '' ? '&s=' + c_LoadedSite : '');
+        window.history.pushState({ path: urlWithParms }, '', urlWithParms);
+
+    }
 
 }
 
