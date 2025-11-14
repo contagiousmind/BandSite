@@ -232,6 +232,7 @@ a:hover {
     transition: ease-in-out all 0.5s;;
     font-size:2em;
     border-radius: 0;
+    padding:5px;
     transition: 1s ease-in-out all;
 }
 
