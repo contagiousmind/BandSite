@@ -231,8 +231,16 @@ a:hover {
     text-align:center;
     transition: ease-in-out all 0.5s;;
     font-size:2em;
-
+    border-radius: 0;
+    transition: 1s ease-in-out all;
 }
+
+.memberouter:hover {
+    cursor: pointer;
+    background-color: var(--accentcolor4);
+    border-radius: 20px;;
+}
+
 
 .memberouter.large {
     font-size:3em;
