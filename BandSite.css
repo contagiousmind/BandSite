@@ -541,7 +541,7 @@ a:hover {
     float:left;
     width: 100%;
     padding: 5px 0;
-    color: var(--accentcolor3);
+    color: var(--accentcolor4);
     display:none;
 }
 
@@ -549,7 +549,7 @@ a:hover {
     float:left;
     width: 100%;
     padding: 5px 0;
-    color: var(--accentcolor4);
+    color: var(--accentcolor3);
     display:none;
 }
 
@@ -559,10 +559,13 @@ a:hover {
     padding: 5px 0;
     color: var(--accentcolor4);
     text-align: center;
+    border-top: 2px solid var(--accentcolor4);
+    border-bottom: 2px solid var(--accentcolor4);
 }
 
 .gigitemouter .gigitemcenter .photos:hover {
     color: var(--accentcolor3);
+    border-color: var(--accentcolor3);
     cursor: pointer;
 }
 
