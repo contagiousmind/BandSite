@@ -33,8 +33,8 @@ function BuildPhotos(data) {
 
     var html = "";
     // get size of screen to size the cover image...
-    var w = ($("#TabContent_7").width() / 100) * 45;        // 45%
-    var h = w / 0.75;
+    var w = (($("#TabContent_7").width() / 100) * 45) + 10;        // 45%... + 10 to match padding gaps
+    var h = (w / 0.75) + 8;
 
     // start by showing the titls, and the first picture
     for(i = 0; i < photoList.length; i++) {
@@ -73,6 +73,12 @@ function PhotoItemFolderClick(idName) {
 
     if (idName != undefined) {
         c_PhotoFolderName = idName;
+    }
+
+    // if this one is open already, just close it...
+    if ($("#PhotoItems_" + c_PhotoFolderName).is(":visible")) {
+        $("#PhotoItems_" + c_PhotoFolderName).hide(300);
+        return;
     }
     
     // close all first...

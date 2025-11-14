@@ -92,7 +92,7 @@ function BuildHomePageNextGig() {
         // get the size of the panel to size the images on left and right...
         var panelWidth = $("#MainContent_CoverImage").width();
         // left picture is 25% width... which is then 75% of the height...
-        var pictureWidth = (panelWidth / 100.00) * 25.00;
+        var pictureWidth = ((panelWidth / 100.00) * 25.00) - 20;
         var pictureHeight = pictureWidth / 0.75;
 
         var itemTemplate = $("#GigItem_Template").html();
@@ -158,7 +158,7 @@ function BuildGigsDisplay() {
     // get the size of the panel to size the images on left and right...
     var panelWidth = $("#TabContent_5").width();
     // left picture is 25% width... which is then 75% of the height...
-    var pictureWidth = (panelWidth / 100.00) * 25.00;
+    var pictureWidth = ((panelWidth / 100.00) * 25.00) - 20;
     var pictureHeight = pictureWidth / 0.75;
 
     var itemTemplate = $("#GigItem_Template").html();

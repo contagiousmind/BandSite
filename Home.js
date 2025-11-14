@@ -176,7 +176,7 @@ function BuildMembers(data) {
      // and get width for each member
      var width = screenWidth / membersList.length;
      // and remove a few to fit it all in
-     width = width-15;
+     width = width-20;
      // and set the height so the width is 75% of height
      var height = width / 0.75;
 

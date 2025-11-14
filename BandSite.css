@@ -233,13 +233,13 @@ a:hover {
     font-size:2em;
     border-radius: 0;
     padding:5px;
-    transition: 1s ease-in-out all;
+    transition: 0.75s ease-in-out all;
 }
 
 .memberouter:hover {
     cursor: pointer;
     background-color: var(--accentcolor4);
-    border-radius: 20px;;
+    border-radius: 10px;
 }
 
 
@@ -452,7 +452,15 @@ a:hover {
 
 .gigitemouter .gigitemleft {
     float:left;
+    padding:5px;
+    border-radius: 0;
     transition: ease-in-out all 0.5s;
+}
+
+.gigitemouter .gigitemleft:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--accentcolor4);
 }
 
 .gigitemouter .gigitemleft img {
@@ -463,7 +471,15 @@ a:hover {
 
 .gigitemouter .gigitemright {
     float:right;
+    padding:5px;
+    border-radius: 0;
     transition: ease-in-out all 0.5s;
+}
+
+.gigitemouter .gigitemright:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--accentcolor4);
 }
 
 .gigitemouter .gigitemright img {
@@ -651,6 +667,23 @@ a:hover {
 .photosfolderouter .photositemsouter .photoitemouter {
     float:left;
     margin-bottom:1px;
+    padding:5px;
+    border-radius: 0;
+    transition: 0.75s ease-in-out all;
+}
+
+.photosfolderouter .photositemsouter .photoitemouter.cover {
+    float:left;
+    margin-bottom:1px;
+    padding:5px 15px 5px 5px;
+    border-radius: 0;
+    transition: 0.75s ease-in-out all;
+}
+
+.photosfolderouter .photositemsouter .photoitemouter:hover {
+    border-radius: 10px;
+    background-color: var(--accentcolor4);
+    cursor: pointer;
 }
 
 .photosfolderouter .photositemsouter .photoitemouter img {
