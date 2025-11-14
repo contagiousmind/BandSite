@@ -557,15 +557,15 @@ a:hover {
     float:left;
     width: 100%;
     padding: 5px 0;
-    color: var(--accentcolor4);
+    color: var(--accentcolor3);
     text-align: center;
-    border-top: 2px solid var(--accentcolor4);
-    border-bottom: 2px solid var(--accentcolor4);
+    border-top: 2px solid var(--accentcolor3);
+    border-bottom: 2px solid var(--accentcolor3);
 }
 
 .gigitemouter .gigitemcenter .photos:hover {
-    color: var(--accentcolor3);
-    border-color: var(--accentcolor3);
+    color: var(--accentcolor4);
+    border-color: var(--accentcolor4);
     cursor: pointer;
 }
 
