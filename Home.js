@@ -24,6 +24,7 @@ function BuildAboutUs(data) {
       , data.values[1][5]
       , data.values[1][6]
       , data.values[1][7]
+      , data.values[1][8]
   );
 
     // set page title
@@ -62,6 +63,14 @@ function BuildAboutUs(data) {
             socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://open.spotify.com/' + aboutUs.SpotifyPage)
                               .replace(/\$SOCIALICON\$/g, 'https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Green.png')
                               .replace(/\$SOCIALPAGE\$/g, aboutUs.SpotifyPage)
+        );
+    }
+
+    if (aboutUs.Facebook != "") {
+        $(".socialouter").append(
+            socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://www.facebook.com/people/' + aboutUs.Facebook)
+                              .replace(/\$SOCIALICON\$/g, 'Images/Facebook_Logo_Primary.png')
+                              .replace(/\$SOCIALPAGE\$/g, aboutUs.Facebook)
         );
     }
 
@@ -305,7 +314,7 @@ function Picture_Click_Enlarge(e) {
 
 
 //objects
-function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTubePage, spotifyPage, mainLogo) {
+function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTubePage, spotifyPage, mainLogo, facebook) {
     this.BandName = bandName;
     this.AboutUsPicture= aboutUsPicture;
     this.Blurb = blurb;
@@ -314,6 +323,8 @@ function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTube
     this.YouTubePage = (youTubePage == null ? '' : youTubePage);
     this.SpotifyPage = (spotifyPage == null ? '' : spotifyPage);
     this.MainLogo = mainLogo;
+    this.Facebook = (facebook == null ? '' : facebook);
+
 }
 
 
