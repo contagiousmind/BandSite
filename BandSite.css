@@ -339,6 +339,16 @@ a:hover {
 
 .newsitemouter .newsiteminner .newsitempicture {
     float:left;
+    padding:5px;
+    border-radius: 0;
+    background-color: var(--accentcolor3);
+    transition: 0.75s ease all;
+}
+
+.newsitemouter .newsiteminner .newsitempicture:hover {
+    border-radius: 40px;
+    background-color: var(--accentcolor4);
+    cursor: pointer;
 }
 
 .newsitemouter .newsiteminner .newsitempicture img {
@@ -454,6 +464,7 @@ a:hover {
     float:left;
     padding:5px;
     border-radius: 0;
+    background-color: var(--accentcolor3);
     transition: ease-in-out all 0.5s;
 }
 
