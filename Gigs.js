@@ -104,7 +104,7 @@ function BuildHomePageNextGig() {
 
 
         // if we have gig's coming put a title up top..
-        html += gigTitleTemplate.replace("$TITLE$", 'Next gig')
+        html += gigTitleTemplate.replace("$TITLE$", 'Come see us at our next show...')
                                 .replace("$UPCOMING$", 'upcoming')
                             ;
     
