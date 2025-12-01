@@ -193,6 +193,10 @@ function BuildMerch(data) {
         if (data.values[0].length > 0) {
             // window.open(data.values[1][0], '_blank').focus();
             window.open(data.values[1][0]);
+
+            // and put link on page...
+            $("#TabContent_8").html(data.values[1][0]);
+
         }
     }
 }
