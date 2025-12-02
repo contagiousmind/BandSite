@@ -159,7 +159,7 @@ function BuildFAQs(data) {
     }
 
     $("#FAQ_Answers_MainOuter").html(html);
-    $(".faqtitle span").html(title.toLowerCase());
+    $(".faqtitle .faqtitletext").html(title.toLowerCase());
     
 }
 

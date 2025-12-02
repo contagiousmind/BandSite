@@ -48,13 +48,15 @@ a:hover {
 .mainmenu .mainmenuouter .menulogoouter {
     float:left;
     margin-right: 10%;
+        width:100%;
+
 }
 
-/* controlled in js now? 
-    .mainmenu .mainmenuouter .menulogoouter .menulogo {
-        height: 50px;
-    }
-*/
+.mainmenu .mainmenuouter .menulogoouter .menulogo {
+    width:100%;
+
+}
+
 
 .mainmenu .mainmenuouter .menuitems {
     float:right;
@@ -81,7 +83,7 @@ a:hover {
 
 .mainmenu .mainmenuouter .menuitems .menuitemouter .menuitem {
     text-align:center;
-    font-size: 3.5em;
+    font-size: 2em;
     font-family: 'punk';
 }
 
@@ -209,7 +211,7 @@ a:hover {
 
 }
 
-/* .faqtitle .faqtitletitle {
+/* .faqtitle .faqtitletext {
 
 } */
 
@@ -286,6 +288,7 @@ a:hover {
     width: 100%;
     padding: 2px;
     text-align: center;
+    font-size: 0.5em;
 }
 
 .memberouter .memberblurb {
@@ -298,6 +301,7 @@ a:hover {
     float:left;
     width: 100%;
     font-family: punk;
+    font-size: 0.75em;
 }
 
 
