@@ -646,6 +646,44 @@ a:hover {
 }
 
 
+/* tab 6 Lyrics  */
+.lyricsouter {
+    float:left;
+    width: 100%;
+}
+
+.lyricsouter .lyricstitleouter {
+    float:left;
+    width:100%;
+    border-bottom: 5px solid var(--accentcolor3);
+    color: var(--accentcolor3);
+    font-weight: 600;
+}
+
+.lyricsouter .lyricstitleouter:hover {
+    color: var(--accentcolor4);
+    cursor: pointer;
+    border-color: var(--accentcolor4);
+}
+
+.lyricsouter .lyricstitleouter .lyricstitle {
+    float:left;
+    width: 100%;
+    
+    padding: 20px 0 0 0;
+    font-size: 2em;
+
+}
+
+.lyricsouter .lyricsitemsouter {
+    float:left;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
 
 /* tab 7 photos */
 

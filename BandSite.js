@@ -2,6 +2,8 @@
 
 var c_LoadedSite = ''; 
 var c_PhotoFolderName = '';
+var c_songNameID = "";
+
 
 // here's the docs for js date formating options as i always forget them
 // https://stackoverflow.com/questions/3552461/how-do-i-format-a-date-in-javascript
@@ -34,6 +36,9 @@ function ReadQueryParam() {
     }
     if (searchParams.has('f')) {
         c_PhotoFolderName = searchParams.get('f');
+    }
+    if (searchParams.has('l')) {
+        c_songNameID = searchParams.get('l');
     }
 
     MenuItem_Click(page);
@@ -150,7 +155,7 @@ function MenuItem_Click(tab) {
             break;
 
         case 'lyrics':
-
+            GetData('Lyrics', BuildLyrics);
 
             break;
 
