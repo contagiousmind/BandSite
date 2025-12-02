@@ -63,7 +63,7 @@ function BuildNewsPage(e) {
 
             html += template.replace(/\$TITLE\$/g, newsList[i].Title)
                             .replace(/\$NEWSPICTURE\$/g, newsList[i].Picture)
-                            .replace(/\$WORDS\$/g, newsList[i].Words)
+                            .replace(/\$WORDS\$/g, newsList[i].Words.replace(/\n/g,'</br>'))
                             .replace(/\$STYLE\$/g, newsList[i].Style)
                         ;
         }
