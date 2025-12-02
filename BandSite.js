@@ -192,7 +192,8 @@ function BuildMerch(data) {
     if (data.values.length > 0) {
         if (data.values[0].length > 0) {
             // window.open(data.values[1][0], '_blank').focus();
-            window.open(data.values[1][0]);
+            // window.open(data.values[1][0]);
+            // link in html now
 
             // and put link on page...
             $("#TabContent_8").html(data.values[1][0]);
