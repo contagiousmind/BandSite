@@ -15,11 +15,11 @@
 }
 
 
-
 body {
     background-color: var(--background);
     color: var(--textcolor);
     margin: 0 auto;
+    font-family: "Special Elite";
 }
 
 
@@ -208,6 +208,19 @@ a:hover {
     font-family: 'punk';
 
 }
+
+/* .faqtitle .faqtitletitle {
+
+} */
+
+.faqtitle .faqtitlequestionmark {
+    font-family: "Special Elite";
+    background-color: #fff;
+    color: var(--background);
+    padding: 10px 5px 0 5px;
+    border-radius: 10px;
+}
+
 
 .faqanswersmainouter {
     float:left;
