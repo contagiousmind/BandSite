@@ -574,6 +574,7 @@ a:hover {
 }
 
 .gigitemouter .gigitemcenter .ticketlink {
+    display:none;
     float:left;
     width: 100%;
     padding: 2px 0;
