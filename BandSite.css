@@ -516,6 +516,25 @@ a:hover {
     width: 100%;
 }
 
+.gigitemouter .gigitemcountouter {
+    position: relative;
+    width: 50px;
+    left: 98%;
+    top: 20px;
+    border-radius: 50px;
+    background-color: var(--accentcolor1);
+    border:5px solid var(--accentcolor3);
+    color: var(--accentcolor2);
+    text-align: center;
+    padding:10px 0;
+    line-height: 100%;
+    font-weight: 900;
+}
+
+.gigitemouter .gigitemcountouter .gigcount {
+    vertical-align:middle;
+}
+
 .gigitemouter .gigitemcenter {
     float:left;
     width: 47.5%;

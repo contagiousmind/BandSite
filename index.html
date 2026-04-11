@@ -26,7 +26,7 @@
 
 
         <meta property="og:type" content="website">
-        <meta property="og:image" content="https://contagiousmind.github.io/BandSite/thepennyaspenproject_favicon.ico">
+        <!-- <meta property="og:image" content="https://contagiousmind.github.io/BandSite/thepennyaspenproject_favicon.ico"> -->
 
     </head>
     <body>
@@ -276,6 +276,11 @@
 
             <div id="GigItem_Template" style="display:none;">
                 <div class="gigitemouter $UPCOMING$">
+                    <div class="gigitemcountouter">
+                        <div class="gigcount">
+                            <span>$COUNT$</span>
+                        </div>
+                    </div>
                     <div class="gigitemleft" onclick="Picture_Click_Enlarge(this);"/>
                         <img src="$PROMOPOSTER$">
                     </div>
@@ -314,13 +319,14 @@
                         <div class="stagetime">
                             <span>We're on at $STAGETIME$</span>
                         </div>
-                        <div class="photos" onclick="GigViewPhotos('$PHOTOFOLDER$');">
+                        <div class="photos" onclick="GigViewPhotos('$PHOTOFOLDER$', $INDEX$);">
                             <span>See Pictures</span>
                         </div>
                     </div>
                     <div class="gigitemright" onclick="Picture_Click_Enlarge(this);">
                         <img src="$GIGPICTURE$">
                     </div>
+                    
                 </div>
 
             </div>

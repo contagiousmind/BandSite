@@ -27,7 +27,8 @@ function Gig(date, event, info, venue, city, country, bandList, ticketLink, door
     this.TicketLink = (ticketLink == undefined ? "" : ticketLink);
     this.PhotoFolder = (photoFolder == undefined ? "" : photoFolder);
     this.PromoPoster = promoPoster;
-    this.GigPicture = gigPicture
+    this.GigPicture = gigPicture;
+    this.Number = 0;
 }
 
 
@@ -61,6 +62,13 @@ function SetupGigs(data) {
           pastGigList.push(gigList[i]);
         }
     }
+
+    // sort all to number them
+    gigList.sort((a, b) => a.Date - b.Date);
+    for(i = 0; i < gigList.length; i++) {
+        gigList[i].Number = i+1;
+    }
+
 
     // sort by latest first...
     pastGigList.sort((a, b) => b.Date - a.Date);
@@ -129,6 +137,10 @@ function BuildHomePageNextGig() {
                     .replace("$UPCOMING$", 'upcoming')
 
                     .replace(/\$PHOTOFOLDER\$/g,  GetCleanFolderName(gigList[0].PhotoFolder))
+
+                    .replace(/\$COUNT\$/g, (gigList[0].Number).toString()) 
+
+                    .replace(/\$INDEX\$/g, (i).toString()) 
 
             ;
 
@@ -239,6 +251,10 @@ function BuildGigsDisplay() {
                             .replace("$UPCOMING$", upcoming)
 
                             .replace(/\$PHOTOFOLDER\$/g,  GetCleanFolderName(gigList[i].PhotoFolder))
+
+                            .replace(/\$COUNT\$/g, (gigList[i].Number).toString()) 
+
+                            .replace(/\$INDEX\$/g, (i).toString()) 
 
                     ;
 

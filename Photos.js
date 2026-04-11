@@ -149,7 +149,15 @@ function GetCleanFolderName(name) {
 
 
 
-function GigViewPhotos(photosFolder) {
+function GigViewPhotos(photosFolder, index) {
+
+    // also set the meta image for rich links... can't be done here as page reloads
+    // $('meta[property="og:image"]').remove();
+    // $("head").append('<meta property="og:image" content="' + gigList[index].GigPicture + '" >');
+
+
+
+
     window.location = urlWithParms = window.location.protocol + "//" + window.location.host + window.location.pathname + '?p=Photos&f=' + GetCleanFolderName(photosFolder);
 }
 
