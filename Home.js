@@ -125,9 +125,11 @@ function SetMetaTags() {
     // $("head").append('<meta property="og:image" content="' + location.origin + location.pathname + aboutUs.BandName.toLowerCase().replace(/ /g, '') + '_favicon.ico' + '" >');
     
     
-    $("head").append('<meta property="og:image:width" content="' + $('.aboutuspicture').width() + '" >');
-    $("head").append('<meta property="og:image:height" content="' + $('.aboutuspicture').height() + '" >');
+    // $("head").append('<meta property="og:image:width" content="' + $('.aboutuspicture').width() + '" >');
+    // $("head").append('<meta property="og:image:height" content="' + $('.aboutuspicture').height() + '" >');
 
+    $("head").append('<meta property="og:image:width" content="450" >');
+    $("head").append('<meta property="og:image:height" content="600" >');
 
     
   
