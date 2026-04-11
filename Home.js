@@ -25,6 +25,7 @@ function BuildAboutUs(data) {
       , data.values[1][6]
       , data.values[1][7]
       , data.values[1][8]
+      , data.values[1][9]
   );
 
     // set page title
@@ -118,10 +119,10 @@ function SetMetaTags() {
 
 
 
-    $("head").append('<meta property="og:title" content="' + aboutUs.BandName + ' | Your favourite local band" >');
-    $("head").append('<meta property="og:description" content="' + aboutUs.BandName + aboutUs.Blurb + '" >');
+    $("head").append('<meta property="og:title" content="' + aboutUs.BandName + '" >');
+    $("head").append('<meta property="og:description" content="' + aboutUs.BandName + '" >');
     $("head").append('<meta property="og:url" content="' + location.href + '" >');
-    $("head").append('<meta property="og:image" content="' + aboutUs.AboutUsPicture + '" >');
+    $("head").append('<meta property="og:image" content="' + aboutUs.RichLinkImage + '" >');
     // $("head").append('<meta property="og:image" content="' + location.origin + location.pathname + aboutUs.BandName.toLowerCase().replace(/ /g, '') + '_favicon.ico' + '" >');
     
     
@@ -316,7 +317,7 @@ function Picture_Click_Enlarge(e) {
 
 
 //objects
-function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTubePage, spotifyPage, mainLogo, facebook) {
+function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTubePage, spotifyPage, mainLogo, facebook, richLinkImage) {
     this.BandName = bandName;
     this.AboutUsPicture= aboutUsPicture;
     this.Blurb = blurb;
@@ -326,7 +327,7 @@ function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTube
     this.SpotifyPage = (spotifyPage == null ? '' : spotifyPage);
     this.MainLogo = mainLogo;
     this.Facebook = (facebook == null ? '' : facebook);
-
+    this.RichLinkImage = richLinkImage;
 }
 
 
