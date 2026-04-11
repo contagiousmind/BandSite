@@ -129,8 +129,8 @@ function SetMetaTags() {
     // $("head").append('<meta property="og:image:width" content="' + $('.aboutuspicture').width() + '" >');
     // $("head").append('<meta property="og:image:height" content="' + $('.aboutuspicture').height() + '" >');
 
-    $("head").append('<meta property="og:image:width" content="450" >');
-    $("head").append('<meta property="og:image:height" content="600" >');
+    $("head").append('<meta property="og:image:width" content="200" >');
+    $("head").append('<meta property="og:image:height" content="300" >');
 
     
   
