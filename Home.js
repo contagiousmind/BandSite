@@ -176,6 +176,7 @@ function BuildMembers(data) {
           , data.values[i][2]
           , data.values[i][3]
           , data.values[i][4]
+          , data.values[i][5]
         ));
     }
 
@@ -183,16 +184,28 @@ function BuildMembers(data) {
 
     var html = '';
 
+    // get total count of members not hidden
+    var memberCount = 0;
+    for(i = 0; i < membersList.length; i++) {
+        if (membersList[i].Hide == 0) {
+            memberCount++;
+        }
+    }
+
      // set the size of these based on screen size... or actually just the div we're using
      var screenWidth = $("#BandMembers_MainOuter").width(); //  window.innerWidth;
      // and get width for each member
-     var width = screenWidth / membersList.length;
+     var width = screenWidth / memberCount;     // membersList.length;
      // and remove a few to fit it all in
      width = width-20;
      // and set the height so the width is 75% of height
      var height = width / 0.75;
 
     for(i = 0; i < membersList.length; i++) {
+
+        if (membersList[i].Hide == 1) {
+            continue;
+        }
 
       // there are two picturesfor each member, profile, and wide...
       var picList = new Array();
@@ -331,12 +344,13 @@ function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTube
 }
 
 
-function BandMember(name, picture, blurb, plays, insta) {
+function BandMember(name, picture, blurb, plays, insta, hide) {
     this.Name = name;
     this.Picture = picture;
     this.Blurb = blurb;
     this.Plays = plays;
     this.Insta = insta;
+    this.Hide = hide;
 }
 
 
