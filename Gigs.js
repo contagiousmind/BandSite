@@ -182,9 +182,11 @@ function BuildGigsDisplay() {
 
 
     // if we have gig's coming put a title up top..
-    html += gigTitleTemplate.replace("$TITLE$", 'Upcoming gigs')
-                            .replace("$UPCOMING$", 'upcoming')
-                        ;
+    if (futureGigList.length > 0) {
+        html += gigTitleTemplate.replace("$TITLE$", 'Upcoming gigs')
+                                .replace("$UPCOMING$", 'upcoming')
+                            ;
+    }
     
     var nextYearGig = false;
 

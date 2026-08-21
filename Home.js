@@ -53,7 +53,7 @@ function BuildAboutUs(data) {
 
     if (aboutUs.YouTubePage != "") {
         $(".socialouter").append(
-            socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://www.youtube.com/@' + aboutUs.AboutUs)
+            socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://www.youtube.com/@' + aboutUs.YouTubePage)
                               .replace(/\$SOCIALICON\$/g, 'Images/yt_logo.png')
                               .replace(/\$SOCIALPAGE\$/g, aboutUs.YouTubePage)
         );
