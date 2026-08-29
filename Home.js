@@ -26,6 +26,7 @@ function BuildAboutUs(data) {
       , data.values[1][7]
       , data.values[1][8]
       , data.values[1][9]
+      , data.values[1][10]
   );
 
     // set page title
@@ -72,6 +73,14 @@ function BuildAboutUs(data) {
             socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'https://www.facebook.com/people/' + aboutUs.Facebook)
                               .replace(/\$SOCIALICON\$/g, 'Images/Facebook_Logo_Primary.png')
                               .replace(/\$SOCIALPAGE\$/g, aboutUs.Facebook)
+        );
+    }
+
+    if (aboutUs.Email != "") {
+        $(".socialouter").append(
+            socialItemTemplate.replace(/\$SOCIALLINK\$/g, 'mailto:' + aboutUs.Email)
+                              .replace(/\$SOCIALICON\$/g, 'Images/email.jpg')
+                              .replace(/\$SOCIALPAGE\$/g, aboutUs.Email)
         );
     }
 
@@ -330,7 +339,7 @@ function Picture_Click_Enlarge(e) {
 
 
 //objects
-function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTubePage, spotifyPage, mainLogo, facebook, richLinkImage) {
+function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTubePage, spotifyPage, mainLogo, facebook, richLinkImage, email) {
     this.BandName = bandName;
     this.AboutUsPicture= aboutUsPicture;
     this.Blurb = blurb;
@@ -341,6 +350,7 @@ function AboutUs(bandName, aboutUsPicture, blurb, coverImage, instaPage, youTube
     this.MainLogo = mainLogo;
     this.Facebook = (facebook == null ? '' : facebook);
     this.RichLinkImage = richLinkImage;
+    this.Email = email;
 }
 
 
